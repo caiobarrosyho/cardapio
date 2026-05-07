@@ -127,3 +127,23 @@ php nograuburger/migrar_pedidos.php
 O script lê `data/pedidos.json`, cria backup automático em `data/backups/` e importa/atualiza as tabelas `pedidos` e `pedido_itens` sem duplicar registros em execuções repetidas.
 
 Mais detalhes estão em `docs/MIGRACAO_PEDIDOS.md`.
+
+## Fase 5 — API para bot
+
+A API usa o token salvo em `configuracoes_loja`, por exemplo:
+
+```sql
+INSERT INTO configuracoes_loja (loja_id, chave, valor, tipo)
+VALUES (1, 'api_token', 'troque-por-um-token-seguro', 'texto')
+ON DUPLICATE KEY UPDATE valor = VALUES(valor);
+```
+
+Opcionalmente, configure um slug para usar nas URLs da API:
+
+```sql
+INSERT INTO configuracoes_loja (loja_id, chave, valor, tipo)
+VALUES (1, 'slug', 'nograu', 'texto')
+ON DUPLICATE KEY UPDATE valor = VALUES(valor);
+```
+
+Mais detalhes estão em `docs/API.md`.

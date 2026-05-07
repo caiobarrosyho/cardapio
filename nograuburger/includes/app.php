@@ -302,9 +302,13 @@ function cardapio_normalizar_status_pedido($status) {
     return in_array($status, $permitidos, true) ? $status : 'novo';
 }
 
-function cardapio_pedido_para_banco(PDO $pdo, array $pedido) {
-    $dadosLoja = cardapio_carregar_produtos();
-    $lojaId = cardapio_obter_loja_id($pdo, $dadosLoja['loja'] ?? []);
+function cardapio_pedido_para_banco(PDO $pdo, array $pedido, $lojaId = null) {
+    if ($lojaId === null) {
+        $dadosLoja = cardapio_carregar_produtos();
+        $lojaId = cardapio_obter_loja_id($pdo, $dadosLoja['loja'] ?? []);
+    }
+
+    $lojaId = (int)$lojaId;
 
     $codigo = limpar($pedido['id'] ?? '');
     if ($codigo === '') {

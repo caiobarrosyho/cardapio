@@ -208,6 +208,7 @@ CREATE TABLE IF NOT EXISTS configuracoes_loja (
     criado_em TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     atualizado_em TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     UNIQUE KEY uk_configuracoes_loja_chave (loja_id, chave),
+    KEY idx_configuracoes_chave_valor (chave, valor(100)),
     CONSTRAINT fk_configuracoes_loja FOREIGN KEY (loja_id) REFERENCES lojas(id)
         ON UPDATE CASCADE ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
