@@ -51,7 +51,7 @@ Exemplo padrão de erro:
 }
 ```
 
-Erros internos são registrados em `nograuburger/logs/api-AAAA-MM-DD.log` e não exibem senha, DSN ou stack trace ao cliente.
+Erros internos são registrados em `nograuburger/logs/api-AAAA-MM-DD.log` e não exibem senha, DSN ou stack trace ao cliente. A pasta `logs/` inclui bloqueio básico para Apache via `.htaccess`.
 
 ## Endpoints
 
@@ -283,6 +283,20 @@ Status aceitos:
     "db_id": 45,
     "status": "finalizado",
     "impresso": 1
+  }
+}
+```
+
+### Erro de JSON inválido
+
+Quando um endpoint `POST` recebe um corpo que não é JSON válido, a API responde:
+
+```json
+{
+  "ok": false,
+  "erro": {
+    "codigo": "json_invalido",
+    "mensagem": "O corpo da requisição não é um JSON válido."
   }
 }
 ```

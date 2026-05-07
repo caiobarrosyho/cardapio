@@ -9,6 +9,7 @@
 
 require_once __DIR__ . '/../includes/app.php';
 
+ini_set('display_errors', '0');
 header('Content-Type: application/json; charset=utf-8');
 
 function api_log_erro($mensagem) {
@@ -28,6 +29,17 @@ function api_responder($dados, $statusHttp = 200) {
     exit;
 }
 
+set_exception_handler(function(Throwable $e) {
+    api_log_erro('Exceção não tratada: ' . $e->getMessage());
+    api_responder([
+        'ok' => false,
+        'erro' => [
+            'codigo' => 'erro_interno',
+            'mensagem' => 'Não foi possível processar a solicitação.',
+        ],
+    ], 500);
+});
+
 function api_erro($codigo, $mensagem, $statusHttp = 400) {
     api_responder([
         'ok' => false,
@@ -44,6 +56,10 @@ function api_input() {
 
     if ($raw !== false && trim($raw) !== '') {
         $decodificado = json_decode($raw, true);
+        if (json_last_error() !== JSON_ERROR_NONE) {
+            api_erro('json_invalido', 'O corpo da requisição não é um JSON válido.', 400);
+        }
+
         if (is_array($decodificado)) {
             $json = $decodificado;
         }
