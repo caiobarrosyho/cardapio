@@ -3,9 +3,18 @@ session_start();
 require __DIR__ . '/funcoes_carrinho.php';
 require_once __DIR__ . '/includes/app.php';
 
-$dados = cardapio_carregar_produtos();
+$erroBanco = '';
+$dadosJson = cardapio_carregar_produtos();
+$dados = ['loja' => $dadosJson['loja'] ?? [], 'categorias' => []];
 
-$loja       = $dados['loja'] ?? [];
+try {
+    $dadosBanco = cardapio_carregar_catalogo_banco(false);
+    $dados['categorias'] = $dadosBanco['categorias'] ?? [];
+} catch (Throwable $e) {
+    $erroBanco = 'Não foi possível carregar o cardápio pelo banco de dados. Verifique a configuração do MariaDB/MySQL.';
+}
+
+$loja       = $dadosJson['loja'] ?? [];
 $categorias = $dados['categorias'] ?? [];
 
 
@@ -152,6 +161,17 @@ $menorPreco = $precos ? min($precos) : 0;
 
   <div class="page-body">
     <div class="content content-burger">
+      <?php if ($erroBanco): ?>
+        <section class="categoria categoria-burger">
+          <div class="categoria-header">
+            <div>
+              <h2 class="categoria-titulo">Cardápio indisponível</h2>
+              <p class="categoria-subtitulo"><?php echo h($erroBanco); ?></p>
+            </div>
+          </div>
+        </section>
+      <?php endif; ?>
+
       <?php foreach ($categorias as $cat): ?>
         <section class="categoria categoria-burger" data-categoria="<?php echo h($cat['titulo']); ?>">
           <div class="categoria-header">

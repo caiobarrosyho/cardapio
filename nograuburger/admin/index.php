@@ -7,9 +7,18 @@ if (empty($_SESSION['logado_cardapio'])) {
     exit;
 }
 
-$dados = cardapio_carregar_produtos();
+$erroBanco = '';
+$dadosJson = cardapio_carregar_produtos();
+$dados = ['loja' => $dadosJson['loja'] ?? [], 'categorias' => []];
 
-$loja       = $dados['loja'] ?? [];
+try {
+    $dadosBanco = cardapio_carregar_catalogo_banco(true);
+    $dados['categorias'] = $dadosBanco['categorias'] ?? [];
+} catch (Throwable $e) {
+    $erroBanco = 'Não foi possível carregar produtos e categorias do banco. Confira a configuração em config/conexao.php e execute migrar_produtos.php.';
+}
+
+$loja       = $dadosJson['loja'] ?? [];
 $categorias = $dados['categorias'] ?? [];
 
 
@@ -18,6 +27,9 @@ $upsell1_ref = $loja['upsell1_ref'] ?? '';
 $upsell2_ref = $loja['upsell2_ref'] ?? '';
 $upsell3_ref = $loja['upsell3_ref'] ?? '';
 $upsell4_ref = $loja['upsell4_ref'] ?? '';
+$flashErro = $_SESSION['admin_erro'] ?? '';
+$flashSucesso = $_SESSION['admin_sucesso'] ?? '';
+unset($_SESSION['admin_erro'], $_SESSION['admin_sucesso']);
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -43,6 +55,33 @@ $upsell4_ref = $loja['upsell4_ref'] ?? '';
       <a href="logout.php">Sair</a>
     </div>
   </div>
+
+  <?php if ($flashErro): ?>
+    <div class="admin-box" style="border-color:#fecaca;background:#fff7f7;">
+      <strong>Erro.</strong>
+      <p style="font-size:13px;color:#7f1d1d;margin:6px 0 0;">
+        <?php echo h($flashErro); ?>
+      </p>
+    </div>
+  <?php endif; ?>
+
+  <?php if ($flashSucesso): ?>
+    <div class="admin-box" style="border-color:#bbf7d0;background:#f0fdf4;">
+      <strong>Sucesso.</strong>
+      <p style="font-size:13px;color:#166534;margin:6px 0 0;">
+        <?php echo h($flashSucesso); ?>
+      </p>
+    </div>
+  <?php endif; ?>
+
+  <?php if ($erroBanco): ?>
+    <div class="admin-box" style="border-color:#fecaca;background:#fff7f7;">
+      <strong>Banco de dados indisponível.</strong>
+      <p style="font-size:13px;color:#7f1d1d;margin:6px 0 0;">
+        <?php echo h($erroBanco); ?>
+      </p>
+    </div>
+  <?php endif; ?>
 
   <!-- ===================== DADOS DA LOJA ===================== -->
   <div class="admin-box" id="bloco-loja">
@@ -192,7 +231,7 @@ $upsell4_ref = $loja['upsell4_ref'] ?? '';
               <?php foreach ($categorias as $cIdx => $cat): ?>
                 <?php foreach ($cat['produtos'] as $pIdx => $prod): ?>
                   <?php
-                    $value = $cIdx . '|' . $pIdx;
+                    $value = ($cat['id'] ?? $cIdx) . '|' . ($prod['id'] ?? $pIdx);
                     $sel   = ($upsell1_ref === $value) ? 'selected' : '';
                   ?>
                   <option value="<?php echo h($value); ?>" <?php echo $sel; ?>>
@@ -210,7 +249,7 @@ $upsell4_ref = $loja['upsell4_ref'] ?? '';
               <?php foreach ($categorias as $cIdx => $cat): ?>
                 <?php foreach ($cat['produtos'] as $pIdx => $prod): ?>
                   <?php
-                    $value = $cIdx . '|' . $pIdx;
+                    $value = ($cat['id'] ?? $cIdx) . '|' . ($prod['id'] ?? $pIdx);
                     $sel   = ($upsell2_ref === $value) ? 'selected' : '';
                   ?>
                   <option value="<?php echo h($value); ?>" <?php echo $sel; ?>>
@@ -230,7 +269,7 @@ $upsell4_ref = $loja['upsell4_ref'] ?? '';
               <?php foreach ($categorias as $cIdx => $cat): ?>
                 <?php foreach ($cat['produtos'] as $pIdx => $prod): ?>
                   <?php
-                    $value = $cIdx . '|' . $pIdx;
+                    $value = ($cat['id'] ?? $cIdx) . '|' . ($prod['id'] ?? $pIdx);
                     $sel   = ($upsell3_ref === $value) ? 'selected' : '';
                   ?>
                   <option value="<?php echo h($value); ?>" <?php echo $sel; ?>>
@@ -248,7 +287,7 @@ $upsell4_ref = $loja['upsell4_ref'] ?? '';
               <?php foreach ($categorias as $cIdx => $cat): ?>
                 <?php foreach ($cat['produtos'] as $pIdx => $prod): ?>
                   <?php
-                    $value = $cIdx . '|' . $pIdx;
+                    $value = ($cat['id'] ?? $cIdx) . '|' . ($prod['id'] ?? $pIdx);
                     $sel   = ($upsell4_ref === $value) ? 'selected' : '';
                   ?>
                   <option value="<?php echo h($value); ?>" <?php echo $sel; ?>>
@@ -354,7 +393,7 @@ $upsell4_ref = $loja['upsell4_ref'] ?? '';
           <?php if ($idx > 0): ?>
             <form action="salvar.php" method="post" style="display:inline;">
               <input type="hidden" name="acao" value="mover_categoria_cima">
-              <input type="hidden" name="idx" value="<?php echo $idx; ?>">
+              <input type="hidden" name="idx" value="<?php echo h($cat['id'] ?? $idx); ?>">
               <button type="submit" class="btn btn-outline" title="Mover categoria para cima">
                 ↑
               </button>
@@ -365,7 +404,7 @@ $upsell4_ref = $loja['upsell4_ref'] ?? '';
           <?php if ($idx < $totalCats - 1): ?>
             <form action="salvar.php" method="post" style="display:inline;">
               <input type="hidden" name="acao" value="mover_categoria_baixo">
-              <input type="hidden" name="idx" value="<?php echo $idx; ?>">
+              <input type="hidden" name="idx" value="<?php echo h($cat['id'] ?? $idx); ?>">
               <button type="submit" class="btn btn-outline" title="Mover categoria para baixo">
                 ↓
               </button>
@@ -375,7 +414,7 @@ $upsell4_ref = $loja['upsell4_ref'] ?? '';
           <!-- remover categoria -->
           <form action="salvar.php" method="post" style="display:inline;">
             <input type="hidden" name="acao" value="remover_categoria">
-            <input type="hidden" name="idx" value="<?php echo $idx; ?>">
+            <input type="hidden" name="idx" value="<?php echo h($cat['id'] ?? $idx); ?>">
             <button type="submit" class="btn btn-outline"
                     onclick="return confirm('Remover esta categoria e todos os produtos dela?');">
               Excluir
@@ -387,7 +426,7 @@ $upsell4_ref = $loja['upsell4_ref'] ?? '';
       <!-- editar nome da categoria -->
       <form action="salvar.php" method="post" style="margin-bottom:10px;">
         <input type="hidden" name="acao" value="editar_categoria">
-        <input type="hidden" name="idx" value="<?php echo $idx; ?>">
+        <input type="hidden" name="idx" value="<?php echo h($cat['id'] ?? $idx); ?>">
         <div class="admin-form-row">
           <div>
             <label>Título da categoria</label>
@@ -427,8 +466,8 @@ $upsell4_ref = $loja['upsell4_ref'] ?? '';
             <td>
               <form action="salvar.php" method="post" style="display:inline%;">
                 <input type="hidden" name="acao" value="toggle_produto_ativo">
-                <input type="hidden" name="cat" value="<?php echo $idx; ?>">
-                <input type="hidden" name="prod" value="<?php echo $pIdx; ?>">
+                <input type="hidden" name="cat" value="<?php echo h($cat['id'] ?? $idx); ?>">
+                <input type="hidden" name="prod" value="<?php echo h($prod['id'] ?? $pIdx); ?>">
                 <button type="submit"
                         class="btn-status <?php echo $ativo ? 'status-ativo' : 'status-inativo'; ?>">
                   <?php echo $ativo ? 'Ativo' : 'Inativo'; ?>
@@ -437,13 +476,13 @@ $upsell4_ref = $loja['upsell4_ref'] ?? '';
             </td>
             <td class="acoes">
               <a class="btn btn-outline"
-                 href="editar_produto.php?cat=<?php echo $idx; ?>&prod=<?php echo $pIdx; ?>">
+                 href="editar_produto.php?cat=<?php echo h($cat['id'] ?? $idx); ?>&prod=<?php echo h($prod['id'] ?? $pIdx); ?>">
                 Editar
               </a>
               <form action="salvar.php" method="post" style="display:inline;">
                 <input type="hidden" name="acao" value="remover_produto">
-                <input type="hidden" name="cat" value="<?php echo $idx; ?>">
-                <input type="hidden" name="prod" value="<?php echo $pIdx; ?>">
+                <input type="hidden" name="cat" value="<?php echo h($cat['id'] ?? $idx); ?>">
+                <input type="hidden" name="prod" value="<?php echo h($prod['id'] ?? $pIdx); ?>">
                 <button class="btn btn-outline" type="submit"
                         onclick="return confirm('Remover este produto?');">
                   Remover
@@ -459,7 +498,7 @@ $upsell4_ref = $loja['upsell4_ref'] ?? '';
       <h3 style="font-size:13px;margin-top:10px;margin-bottom:6px;">Novo produto nesta categoria</h3>
       <form action="salvar.php" method="post" enctype="multipart/form-data">
         <input type="hidden" name="acao" value="novo_produto">
-        <input type="hidden" name="cat" value="<?php echo $idx; ?>">
+        <input type="hidden" name="cat" value="<?php echo h($cat['id'] ?? $idx); ?>">
 
         <div class="admin-form-row">
           <div>

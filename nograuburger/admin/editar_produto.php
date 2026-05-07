@@ -7,19 +7,42 @@ if (empty($_SESSION['logado_cardapio'])) {
     exit;
 }
 
-$dados = cardapio_carregar_produtos();
-$categorias = $dados['categorias'] ?? [];
+$erroBanco = '';
+$dadosJson = cardapio_carregar_produtos();
 
-$catIdx  = (int)($_GET['cat'] ?? -1);
-$prodIdx = (int)($_GET['prod'] ?? -1);
-
-if (!isset($categorias[$catIdx]['produtos'][$prodIdx])) {
-    echo "Produto não encontrado.";
-    exit;
+try {
+    $dados = cardapio_carregar_catalogo_banco(true);
+} catch (Throwable $e) {
+    $erroBanco = 'Não foi possível carregar o produto pelo banco. Confira config/conexao.php e execute migrar_produtos.php.';
+    $dados = ['categorias' => []];
 }
 
-$cat  = $categorias[$catIdx];
-$prod = $cat['produtos'][$prodIdx];
+$categorias = $dados['categorias'] ?? [];
+
+$catId  = (string)($_GET['cat'] ?? '');
+$prodId = (string)($_GET['prod'] ?? '');
+$cat = null;
+$prod = null;
+
+foreach ($categorias as $categoria) {
+    if ((string)($categoria['id'] ?? '') !== $catId) {
+        continue;
+    }
+
+    $cat = $categoria;
+    foreach (($categoria['produtos'] ?? []) as $produto) {
+        if ((string)($produto['id'] ?? '') === $prodId) {
+            $prod = $produto;
+            break;
+        }
+    }
+    break;
+}
+
+if ($erroBanco || !$cat || !$prod) {
+    echo h($erroBanco ?: 'Produto não encontrado.');
+    exit;
+}
 
 ?>
 <!doctype html>
@@ -41,8 +64,8 @@ $prod = $cat['produtos'][$prodIdx];
   <form action="salvar.php" method="post" enctype="multipart/form-data">
     <!-- IMPORTANTE: acao precisa bater com o case do salvar.php -->
     <input type="hidden" name="acao" value="salvar_produto">
-    <input type="hidden" name="cat" value="<?php echo $catIdx; ?>">
-    <input type="hidden" name="prod" value="<?php echo $prodIdx; ?>">
+    <input type="hidden" name="cat" value="<?php echo h($cat['id']); ?>">
+    <input type="hidden" name="prod" value="<?php echo h($prod['id']); ?>">
     <input type="hidden" name="foto_atual" value="<?php echo h($prod['foto'] ?? ''); ?>">
 
     <div class="admin-form-row">

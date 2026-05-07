@@ -77,6 +77,7 @@ CREATE TABLE IF NOT EXISTS categorias (
     criado_em TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     atualizado_em TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     KEY idx_categorias_loja (loja_id),
+    UNIQUE KEY uk_categorias_loja_titulo (loja_id, titulo),
     CONSTRAINT fk_categorias_loja FOREIGN KEY (loja_id) REFERENCES lojas(id)
         ON UPDATE CASCADE ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
@@ -104,6 +105,7 @@ CREATE TABLE IF NOT EXISTS produtos (
     atualizado_em TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     KEY idx_produtos_loja (loja_id),
     KEY idx_produtos_categoria (categoria_id),
+    UNIQUE KEY uk_produtos_categoria_nome (categoria_id, nome),
     CONSTRAINT fk_produtos_loja FOREIGN KEY (loja_id) REFERENCES lojas(id)
         ON UPDATE CASCADE ON DELETE CASCADE,
     CONSTRAINT fk_produtos_categoria FOREIGN KEY (categoria_id) REFERENCES categorias(id)

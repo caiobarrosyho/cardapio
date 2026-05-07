@@ -103,3 +103,15 @@ mysql -u root -p -e "CREATE USER IF NOT EXISTS 'nograuburger_user'@'localhost' I
 ## Próxima fase sugerida
 
 Na fase seguinte, o ideal é criar uma camada de repositório que consiga ler do JSON ou do banco de dados por configuração. Assim, a migração de produtos e pedidos pode ser feita gradualmente, sem interromper o cardápio em produção.
+
+## Fase 3 — migração de produtos
+
+A migração de categorias e produtos passa a ser feita pelo script:
+
+```bash
+php nograuburger/migrar_produtos.php
+```
+
+O script lê `data/produtos.json`, cria backup automático em `data/backups/` e importa/atualiza as tabelas `categorias` e `produtos` sem duplicar registros em execuções repetidas.
+
+Mais detalhes estão em `docs/MIGRACAO_PRODUTOS.md`.

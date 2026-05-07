@@ -3,8 +3,18 @@ session_start();
 require __DIR__ . '/funcoes_carrinho.php';
 require_once __DIR__ . '/includes/app.php';
 
-$dados      = cardapio_carregar_produtos();
-$loja       = $dados['loja'] ?? [];
+$erroBanco = '';
+$dadosJson = cardapio_carregar_produtos();
+$dados = ['loja' => $dadosJson['loja'] ?? [], 'categorias' => []];
+
+try {
+    $dadosBanco = cardapio_carregar_catalogo_banco(false);
+    $dados['categorias'] = $dadosBanco['categorias'] ?? [];
+} catch (Throwable $e) {
+    $erroBanco = 'Não foi possível consultar produtos no banco de dados.';
+}
+
+$loja       = $dadosJson['loja'] ?? [];
 $categorias = $dados['categorias'] ?? [];
 
 
