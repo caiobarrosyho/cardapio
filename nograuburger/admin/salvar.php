@@ -1,24 +1,20 @@
 <?php
 session_start();
+require_once __DIR__ . '/../includes/app.php';
+
 if (empty($_SESSION['logado_cardapio'])) {
     header('Location: login.php');
     exit;
 }
 
-$dataFile = __DIR__ . '/../data/produtos.json';
-$dados = json_decode(@file_get_contents($dataFile), true);
-if (!$dados) {
-    $dados = ['loja' => [], 'categorias' => []];
-}
+$dataFile = cardapio_data_path('produtos.json');
+$dados = cardapio_carregar_produtos();
 
 $acao = $_POST['acao'] ?? '';
 
 // ---------- funções utilitárias ----------
 function salvar_json($arquivo, $dados) {
-    file_put_contents(
-        $arquivo,
-        json_encode($dados, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE)
-    );
+    return cardapio_salvar_json($arquivo, $dados);
 }
 
 function upload_arquivo($campo, $prefixo = 'arq_') {

@@ -1,12 +1,13 @@
 <?php
 session_start();
+require_once __DIR__ . '/../includes/app.php';
+
 if (empty($_SESSION['logado_cardapio'])) {
     header('Location: login.php');
     exit;
 }
 
-$dataFile = __DIR__ . '/../data/produtos.json';
-$dados = json_decode(@file_get_contents($dataFile), true);
+$dados = cardapio_carregar_produtos();
 $categorias = $dados['categorias'] ?? [];
 
 $catIdx  = (int)($_GET['cat'] ?? -1);
@@ -20,7 +21,6 @@ if (!isset($categorias[$catIdx]['produtos'][$prodIdx])) {
 $cat  = $categorias[$catIdx];
 $prod = $cat['produtos'][$prodIdx];
 
-function h($s){ return htmlspecialchars((string)$s, ENT_QUOTES, 'UTF-8'); }
 ?>
 <!doctype html>
 <html lang="pt-br">

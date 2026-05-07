@@ -1,20 +1,17 @@
 <?php
 session_start();
+require_once __DIR__ . '/../includes/app.php';
+
 if (empty($_SESSION['logado_cardapio'])) {
     header('Location: login.php');
     exit;
 }
 
-$dataFile = __DIR__ . '/../data/produtos.json';
-$dados = json_decode(@file_get_contents($dataFile), true);
-if (!$dados) {
-    $dados = ['loja' => [], 'categorias' => []];
-}
+$dados = cardapio_carregar_produtos();
 
 $loja       = $dados['loja'] ?? [];
 $categorias = $dados['categorias'] ?? [];
 
-function h($s) { return htmlspecialchars((string)$s, ENT_QUOTES, 'UTF-8'); }
 
 // referências de upsell (produtos sugeridos no carrinho)
 $upsell1_ref = $loja['upsell1_ref'] ?? '';

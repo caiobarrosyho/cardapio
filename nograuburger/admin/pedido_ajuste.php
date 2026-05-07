@@ -1,17 +1,13 @@
 <?php
 session_start();
+require_once __DIR__ . '/../includes/app.php';
+
 if (empty($_SESSION['logado_cardapio'])) {
     header('Location: login.php');
     exit;
 }
 
-$pedFile = __DIR__ . '/../data/pedidos.json';
-$pedidos = json_decode(@file_get_contents($pedFile), true);
-if (!is_array($pedidos)) {
-    $pedidos = [];
-}
-
-function h($s){ return htmlspecialchars((string)$s, ENT_QUOTES, 'UTF-8'); }
+$pedidos = cardapio_carregar_pedidos();
 
 $id = $_GET['id'] ?? '';
 if ($id === '') {
@@ -52,10 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // atualiza no array principal
     if ($index !== null) {
         $pedidos[$index] = $pedido;
-        @file_put_contents(
-            $pedFile,
-            json_encode($pedidos, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE)
-        );
+        cardapio_salvar_pedidos($pedidos);
     }
 
     // volta para a tela do pedido (ver/imprimir)

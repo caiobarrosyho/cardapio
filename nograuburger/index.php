@@ -1,15 +1,13 @@
 <?php
 session_start();
 require __DIR__ . '/funcoes_carrinho.php';
+require_once __DIR__ . '/includes/app.php';
 
-$dataFile = __DIR__ . '/data/produtos.json';
-$json  = file_get_contents($dataFile);
-$dados = json_decode($json, true);
+$dados = cardapio_carregar_produtos();
 
 $loja       = $dados['loja'] ?? [];
 $categorias = $dados['categorias'] ?? [];
 
-function h($s){ return htmlspecialchars((string)$s, ENT_QUOTES, 'UTF-8'); }
 
 $tipoLoja      = $loja['tipo'] ?? 'Hamburgueria';
 $tempoEntrega  = $loja['tempo_entrega'] ?? '35–50 min';

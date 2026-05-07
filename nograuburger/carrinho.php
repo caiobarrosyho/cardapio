@@ -1,18 +1,12 @@
 <?php
 session_start();
 require __DIR__ . '/funcoes_carrinho.php';
+require_once __DIR__ . '/includes/app.php';
 
-$dataFile   = __DIR__ . '/data/produtos.json';
-$dados      = json_decode(file_get_contents($dataFile), true);
+$dados      = cardapio_carregar_produtos();
 $loja       = $dados['loja'] ?? [];
 $categorias = $dados['categorias'] ?? [];
 
-/* =========================================================
-   Função segura para saída HTML
-========================================================= */
-if (!function_exists('h')) {
-    function h($s){ return htmlspecialchars((string)$s, ENT_QUOTES, 'UTF-8'); }
-}
 
 /* =========================================================
    Ações da sacola
@@ -62,71 +56,6 @@ $taxasEntrega = $loja['taxas_entrega'] ?? [];
 $whatsLoja    = $loja['whatsapp'] ?? '';
 $whatsDigitos = preg_replace('/\D+/', '', $whatsLoja);
 $whatsBase    = $whatsDigitos ? 'https://wa.me/55' . $whatsDigitos : '';
-
-/* =========================================================
-   Busca produto pelo índice categoria/produto
-   Usado no upsell já existente
-========================================================= */
-function buscar_produto($dados, $catIdx, $prodIdx) {
-    if (!isset($dados['categorias'][$catIdx]['produtos'][$prodIdx])) {
-        return null;
-    }
-
-    $p = $dados['categorias'][$catIdx]['produtos'][$prodIdx];
-
-    if (isset($p['ativo']) && !$p['ativo']) {
-        return null;
-    }
-
-    return $p;
-}
-
-/* =========================================================
-   Localiza os dados completos de um item salvo no carrinho
-   ---------------------------------------------------------
-   Isso foi adicionado para pegar foto / detalhe do produto
-   sem alterar as funções do carrinho.
-
-   A função tenta encontrar o produto por:
-   1) id no formato "categoria-produto" (upsell)
-   2) id salvo no próprio produto
-   3) md5(nome + preco), que já é usado no index
-   4) nome + preço como fallback
-========================================================= */
-function localizar_produto_carrinho($dados, $itemId, $itemNome, $itemPreco) {
-    if (empty($dados['categorias']) || !is_array($dados['categorias'])) {
-        return null;
-    }
-
-    foreach ($dados['categorias'] as $catIdx => $cat) {
-        foreach (($cat['produtos'] ?? []) as $prodIdx => $prod) {
-            if (isset($prod['ativo']) && (int)$prod['ativo'] === 0) {
-                continue;
-            }
-
-            $nomeProd   = (string)($prod['nome'] ?? '');
-            $precoProd  = (float)($prod['preco'] ?? 0);
-            $idNumerico = $catIdx . '-' . $prodIdx;
-            $idProd     = (string)($prod['id'] ?? '');
-            $idMd5      = md5($nomeProd . $precoProd);
-
-            $bateIdNumerico = ($itemId === $idNumerico);
-            $bateIdProduto  = ($idProd !== '' && $itemId === $idProd);
-            $bateMd5        = ($itemId === $idMd5);
-
-            $bateNomePreco  = (
-                mb_strtolower(trim($itemNome)) === mb_strtolower(trim($nomeProd))
-                && abs((float)$itemPreco - $precoProd) < 0.001
-            );
-
-            if ($bateIdNumerico || $bateIdProduto || $bateMd5 || $bateNomePreco) {
-                return $prod;
-            }
-        }
-    }
-
-    return null;
-}
 
 /* =========================================================
    Itens do carrinho para:

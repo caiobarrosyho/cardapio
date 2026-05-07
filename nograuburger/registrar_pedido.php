@@ -2,18 +2,9 @@
 // registrar_pedido.php
 // Recebe os dados via POST (fetch do JS) e grava em data/pedidos.json
 
- date_default_timezone_set('America/Sao_Paulo');
+require_once __DIR__ . '/includes/app.php';
 
-$dataDir  = __DIR__ . '/data';
-$pedFile  = $dataDir . '/pedidos.json';
-
-if (!is_dir($dataDir)) {
-    @mkdir($dataDir, 0775, true);
-}
-
-function limpar($valor) {
-    return trim((string)($valor ?? ''));
-}
+date_default_timezone_set('America/Sao_Paulo');
 
 $nome       = limpar($_POST['nome']       ?? '');
 $tel        = limpar($_POST['tel']        ?? '');
@@ -46,16 +37,7 @@ if (!is_array($itens)) {
 }
 
 // Carrega pedidos existentes
-$lista = [];
-
-if (file_exists($pedFile)) {
-    $conteudo = @file_get_contents($pedFile);
-    $lista = json_decode($conteudo, true);
-
-    if (!is_array($lista)) {
-        $lista = [];
-    }
-}
+$lista = cardapio_carregar_pedidos();
 
 // Monta novo pedido
 $pedido = [
@@ -88,10 +70,7 @@ $pedido = [
 array_unshift($lista, $pedido);
 
 // Salva
-file_put_contents(
-    $pedFile,
-    json_encode($lista, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE)
-);
+cardapio_salvar_pedidos($lista);
 
 header('Content-Type: application/json; charset=utf-8');
 

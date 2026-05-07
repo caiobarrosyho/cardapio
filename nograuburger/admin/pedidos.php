@@ -1,24 +1,18 @@
 <?php
 session_start();
+require_once __DIR__ . '/../includes/app.php';
 
 if (empty($_SESSION['logado_cardapio'])) {
     header('Location: login.php');
     exit;
 }
 
-// arquivos de dados
-$prodFile = __DIR__ . '/../data/produtos.json';
-$pedFile  = __DIR__ . '/../data/pedidos.json';
-
 // dados da loja
-$dados = json_decode(@file_get_contents($prodFile), true) ?: [];
+$dados = cardapio_carregar_produtos();
 $loja  = $dados['loja'] ?? [];
 
 // pedidos
-$pedidos = json_decode(@file_get_contents($pedFile), true);
-if (!is_array($pedidos)) {
-    $pedidos = [];
-}
+$pedidos = cardapio_carregar_pedidos();
 
 // garante status
 foreach ($pedidos as &$p) {
@@ -28,9 +22,6 @@ foreach ($pedidos as &$p) {
 }
 unset($p);
 
-function h($s) {
-    return htmlspecialchars((string)$s, ENT_QUOTES, 'UTF-8');
-}
 
 function dinheiro_para_float($valor) {
     if ($valor === null || $valor === '') return 0.0;
@@ -98,10 +89,7 @@ if ($acao && !empty($_GET['id'])) {
     if ($mudou) {
         $pedidos = array_values($pedidos);
 
-        @file_put_contents(
-            $pedFile,
-            json_encode($pedidos, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE)
-        );
+        cardapio_salvar_pedidos($pedidos);
 
         $extra = (!empty($_GET['todos']) && $_GET['todos'] === '1') ? '?todos=1' : '';
         header('Location: pedidos.php' . $extra);
@@ -155,10 +143,7 @@ if ($pedidoId !== '') {
     unset($p);
 
     if ($mudouStatus) {
-        @file_put_contents(
-            $pedFile,
-            json_encode($pedidos, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE)
-        );
+        cardapio_salvar_pedidos($pedidos);
     }
 }
 
