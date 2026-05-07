@@ -1,0 +1,27 @@
+{
+  "name": "No Grau Burger",
+  "short_name": "No Grau",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#111111",
+  "theme_color": "#b91c1c",
+  "description": "Cardápio digital do No Grau Burger.",
+  "icons": [
+    {
+      "src": "assets/img/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/img/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/img/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

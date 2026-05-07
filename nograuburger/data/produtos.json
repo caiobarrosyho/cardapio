@@ -1,0 +1,467 @@
+{
+    "loja": {
+        "nome": "No Grau Burger  🍔",
+        "slogan": "Hambúrguer",
+        "logo": "uploads\/logo_1775133326_Screenshot_3.png",
+        "banner": "uploads\/banner_1775134636_WhatsApp_Image_2026-04-02_at_09.56.40.jpeg",
+        "tipo": "Hambúrguer",
+        "tempo_entrega": "15-20 min",
+        "pedido_minimo": 15,
+        "texto_entrega": "A gente leva até você",
+        "texto_retirada": "Você retira no local",
+        "taxa_padrao": 3.99,
+        "taxa_rapida": 8.99,
+        "taxas_entrega": [
+            {
+                "bairro": "São Clemente",
+                "taxa": 4
+            },
+            {
+                "bairro": "Nova Alvorada",
+                "taxa": 4
+            },
+            {
+                "bairro": "Bela Vista",
+                "taxa": 4
+            },
+            {
+                "bairro": "Colorado",
+                "taxa": 5
+            },
+            {
+                "bairro": "Said Jorge",
+                "taxa": 8
+            },
+            {
+                "bairro": "Paviotti",
+                "taxa": 8
+            },
+            {
+                "bairro": "Amanda",
+                "taxa": 10
+            },
+            {
+                "bairro": "Daniela",
+                "taxa": 8
+            },
+            {
+                "bairro": "Monte Rey",
+                "taxa": 8
+            },
+            {
+                "bairro": "Paulista",
+                "taxa": 8
+            },
+            {
+                "bairro": "Pq Café",
+                "taxa": 8
+            },
+            {
+                "bairro": "Colina",
+                "taxa": 9
+            },
+            {
+                "bairro": "Alvorada",
+                "taxa": 8
+            },
+            {
+                "bairro": "Campos Dourado",
+                "taxa": 8
+            },
+            {
+                "bairro": "São Domingos",
+                "taxa": 8
+            },
+            {
+                "bairro": "São Gabriel",
+                "taxa": 8
+            },
+            {
+                "bairro": "Moreira",
+                "taxa": 10
+            },
+            {
+                "bairro": "Panorama",
+                "taxa": 10
+            },
+            {
+                "bairro": "São Rafael",
+                "taxa": 10
+            },
+            {
+                "bairro": "Engenho",
+                "taxa": 10
+            },
+            {
+                "bairro": "Capoavinha",
+                "taxa": 10
+            },
+            {
+                "bairro": "Progresso",
+                "taxa": 10
+            },
+            {
+                "bairro": "Centro Monte Mor",
+                "taxa": 10
+            },
+            {
+                "bairro": "Meu bairro não está na lista",
+                "taxa": null,
+                "consultar": 1
+            }
+        ],
+        "endereco": "Rua  Guilherme Julio Scheffer, 184",
+        "complemento": "",
+        "bairro": "Jardim Nova Alvorada",
+        "cidade": "Monte Mor",
+        "uf": "SP",
+        "cep": "13197178",
+        "whatsapp": "551999271-1310",
+        "cnpj": "",
+        "hora_seg_abre": "18:00",
+        "hora_seg_fecha": "02:00",
+        "hora_seg_fechado": 0,
+        "hora_ter_abre": "18:00",
+        "hora_ter_fecha": "02:00",
+        "hora_ter_fechado": 0,
+        "hora_qua_abre": "18:00",
+        "hora_qua_fecha": "02:00",
+        "hora_qua_fechado": 0,
+        "hora_qui_abre": "18:00",
+        "hora_qui_fecha": "02:00",
+        "hora_qui_fechado": 0,
+        "hora_sex_abre": "18:00",
+        "hora_sex_fecha": "02:00",
+        "hora_sex_fechado": 0,
+        "hora_sab_abre": "18:00",
+        "hora_sab_fecha": "02:00",
+        "hora_sab_fechado": 0,
+        "hora_dom_abre": "18:00",
+        "hora_dom_fecha": "02:00",
+        "hora_dom_fechado": 0,
+        "upsell1_ref": "2|0",
+        "upsell2_ref": "3|0",
+        "upsell3_ref": "3|1",
+        "upsell4_ref": "5|0"
+    },
+    "categorias": [
+        {
+            "titulo": "Combo Nograu Burger 🍔",
+            "produtos": [
+                {
+                    "nome": "Barca grande",
+                    "descricao": "hambúrguer na barca",
+                    "detalhe": "até duas pessoas",
+                    "preco": 95,
+                    "preco_original": 100,
+                    "ativo": 1,
+                    "foto": "uploads\/prod_1775135426_WhatsApp_Image_2026-04-02_at_09.56.40.jpeg"
+                },
+                {
+                    "nome": "Combo casal",
+                    "descricao": "Um lanche de bacon , um lanche de salada , deliciosa porção de noggtes , cebola onions e fritas cheddar bacon",
+                    "detalhe": "Até duas pessoas",
+                    "preco": 90,
+                    "preco_original": 90,
+                    "ativo": 1,
+                    "foto": "uploads\/prod_1775544931_3B5D46F5-345E-4FA0-A862-781F38D2C3AA.jpeg"
+                },
+                {
+                    "nome": "Combo Família",
+                    "descricao": "Combo completo para compartilhar, com 4 hambúrgueres, batata frita com cheddar e bacon, onion rings, nuggets de frango e molho especial.",
+                    "detalhe": "Serve 4 pessoa",
+                    "preco": 135,
+                    "preco_original": 149.99,
+                    "ativo": 1,
+                    "foto": "uploads\/prod_1775680763_WhatsApp_Image_2026-04-08_at_16.51.40.jpeg"
+                },
+                {
+                    "nome": "Combo Duplo com Batata",
+                    "descricao": "Combo completo com 2 hambúrgueres artesanais, servido com batata frita generosa, finalizada com cheddar cremoso e bacon crocante.",
+                    "detalhe": "Serve 2 pessoa",
+                    "preco": 90,
+                    "preco_original": null,
+                    "ativo": 1,
+                    "foto": "uploads\/prod_1775680897_dois.jpeg"
+                },
+                {
+                    "nome": "Combo com 6 Hambúrgueres",
+                    "descricao": "Combo completo com 6 hambúrgueres artesanais no pão brioche, acompanhados de batata frita com cheddar e bacon, onion rings crocantes e molhos especiais.",
+                    "detalhe": "Serve até 6 pessoas",
+                    "preco": 160,
+                    "preco_original": null,
+                    "ativo": 1,
+                    "foto": "uploads\/prod_1776899618_WhatsApp_Image_2026-04-21_at_01.06.36.jpeg"
+                }
+            ]
+        },
+        {
+            "titulo": "🍔 BURGUER 200 G",
+            "produtos": [
+                {
+                    "nome": "Bacon XT 660",
+                    "descricao": "Pão brioche, carne bovina de 200 g, queijo cheddar, bacon em fatias e molhos.",
+                    "detalhe": "Serve 1 pessoa",
+                    "preco": 35,
+                    "preco_original": 40,
+                    "ativo": 1,
+                    "foto": "uploads\/prod_1775684212_download2.jpg"
+                },
+                {
+                    "nome": "Duplo Bacon Hornet",
+                    "descricao": "Pão brioche, duas carnes bovinas de 200 g, queijo cheddar, bacon fatiado, catupiry e molho da casa.",
+                    "detalhe": "Serve 1 pessoa",
+                    "preco": 44,
+                    "preco_original": 48.99,
+                    "ativo": 1,
+                    "foto": "uploads\/prod_1775684264_download2.jpg"
+                },
+                {
+                    "nome": "No Grau Twin",
+                    "descricao": "Pão brioche, carne bovina de 200 g, queijo cheddar e molho da casa.",
+                    "detalhe": "Serve 1 pessoa",
+                    "preco": 31,
+                    "preco_original": 38.99,
+                    "ativo": 1,
+                    "foto": "uploads\/prod_1775684276_download2.jpg"
+                },
+                {
+                    "nome": "Salada Tracer",
+                    "descricao": "Pão brioche, carne bovina de 200 g, queijo cheddar, ovo, alface, tomate e molho verde.",
+                    "detalhe": "Serve 1 pessoa",
+                    "preco": 34,
+                    "preco_original": 38.99,
+                    "ativo": 1,
+                    "foto": "uploads\/prod_1775684301_download2.jpg"
+                },
+                {
+                    "nome": "Salada Duplo R 1200",
+                    "descricao": "Pão brioche, duas carnes bovinas de 200 g, queijo cheddar, ovo, catupiry, alface, tomate e molho da casa.",
+                    "detalhe": "Serve 1 pessoa",
+                    "preco": 45,
+                    "preco_original": 48.99,
+                    "ativo": 1,
+                    "foto": "uploads\/prod_1775684324_download2.jpg"
+                },
+                {
+                    "nome": "No Grau Mega S 1000",
+                    "descricao": "Pão brioche, duas carnes bovinas de 200 g, queijo cheddar em dobro, catupiry, bacon fatiado, dois ovos, alface, cebola roxa, onion rings e molho da casa.",
+                    "detalhe": "Serve 1 pessoa",
+                    "preco": 53,
+                    "preco_original": 57,
+                    "ativo": 1,
+                    "foto": "uploads\/prod_1775684338_download2.jpg"
+                }
+            ]
+        },
+        {
+            "titulo": "Combos Individuais 🍔",
+            "produtos": [
+                {
+                    "nome": "Batata Cheddar Bacon",
+                    "descricao": "Batata frita crocante de 1 kg, coberta com cheddar cremoso, bacon em pedaços e acompanhada de molhos especiais.",
+                    "detalhe": "Serve 4 pessoa",
+                    "preco": 65,
+                    "preco_original": 74.99,
+                    "ativo": 1,
+                    "foto": "uploads\/prod_1775679510_WhatsApp_Image_2026-04-08_at_16.51.41.jpeg"
+                },
+                {
+                    "nome": "Combo triplo Bacon",
+                    "descricao": "Hambúrguer triplo suculento, acompanhado de batata frita coberta com cheddar cremoso e bacon crocante.",
+                    "detalhe": "Serve 1 pessoa",
+                    "preco": 48,
+                    "preco_original": 52,
+                    "ativo": 1,
+                    "foto": "uploads\/prod_1775679708_WhatsApp_Image_2026-04-08_at_16.51.42.jpeg"
+                },
+                {
+                    "nome": "Barca P",
+                    "descricao": "Barca com hambúrguer artesanal, cheddar cremoso, batata frita coberta com cheddar e bacon crocante. Uma opção caprichada, bem montada e com sabor marcante.",
+                    "detalhe": "Serve 1 pessoa",
+                    "preco": 55,
+                    "preco_original": null,
+                    "ativo": 1,
+                    "foto": "uploads\/prod_1775683785_barca_p.jpeg"
+                },
+                {
+                    "nome": "Barca M",
+                    "descricao": "Barca média com hambúrguer, alface, batata frita com cheddar e bacon crocante, acompanhada de salgadinhos empanados. Uma opção mais completa, ideal para quem quer uma porção reforçada.",
+                    "detalhe": "Serve 1 pessoa",
+                    "preco": 77,
+                    "preco_original": null,
+                    "ativo": 1,
+                    "foto": "uploads\/prod_1775683744_barcam.jpeg"
+                }
+            ]
+        },
+        {
+            "titulo": "Hambúrgueres Artesanais 🍔",
+            "produtos": [
+                {
+                    "nome": "No Grau Burger",
+                    "descricao": "Pão de brioche, hambúrguer grelhado 120g, cheddar fatiado, maionese e molho da casa.",
+                    "detalhe": "Serve 1 pessoa",
+                    "preco": 24,
+                    "preco_original": null,
+                    "ativo": 1,
+                    "foto": "uploads\/prod_1776743938_burgger_padr__o.png"
+                },
+                {
+                    "nome": "Salada Burger",
+                    "descricao": "Pão de brioche, hambúrguer grelhado 120g, cheddar fatiado, catupiry, maionese, super molho da casa, alface e tomate.",
+                    "detalhe": "Serve 1 pessoa",
+                    "preco": 25,
+                    "preco_original": null,
+                    "ativo": 1,
+                    "foto": "uploads\/prod_1776743966_burgger_padr__o.png"
+                },
+                {
+                    "nome": "No Grau Bacon",
+                    "descricao": "Pão de brioche, hambúrguer grelhado 120g, queijo cheddar, bacon, maionese ao modo da casa, molho verde e ketchup.",
+                    "detalhe": "Serve 1 pessoa",
+                    "preco": 28.9,
+                    "preco_original": null,
+                    "ativo": 1,
+                    "foto": "uploads\/prod_1776743997_burgger_padr__o.png"
+                },
+                {
+                    "nome": "No Grau Duplo Bacon",
+                    "descricao": "Pão de brioche, 2 hambúrgueres grelhados de 120g, queijo cheddar em dobro, bacon em dobro, molho verde e maionese ao modo da casa.",
+                    "detalhe": "Serve 1 pessoa",
+                    "preco": 35.5,
+                    "preco_original": null,
+                    "ativo": 1,
+                    "foto": "uploads\/prod_1776744023_burgger_padr__o.png"
+                },
+                {
+                    "nome": "No Grau Triplo Bacon",
+                    "descricao": "Pão de brioche, 3 hambúrgueres grelhados de 120g, queijo cheddar em dobro, bacon em triplo, molho verde, maionese e molho da casa.",
+                    "detalhe": "Serve 1 pessoa",
+                    "preco": 39.9,
+                    "preco_original": null,
+                    "ativo": 1,
+                    "foto": "uploads\/prod_1776744048_burgger_padr__o.png"
+                },
+                {
+                    "nome": "No Grau Mega",
+                    "descricao": "Pão de brioche, hambúrguer grelhado 120g, bacon, queijo cheddar, cream cheese, maionese ao modo da casa e molho verde.",
+                    "detalhe": "Serve 1 pessoa",
+                    "preco": 33,
+                    "preco_original": null,
+                    "ativo": 1,
+                    "foto": "uploads\/prod_1776744069_burgger_padr__o.png"
+                },
+                {
+                    "nome": "No Grau Tudo",
+                    "descricao": "Pão de brioche, hambúrguer grelhado 120g, cheddar, catupiry, alface, cebola roxa, picles, molho verde, maionese e molho da casa.",
+                    "detalhe": "Serve 1 pessoa",
+                    "preco": 32,
+                    "preco_original": null,
+                    "ativo": 1,
+                    "foto": "uploads\/prod_1776744125_burgger_padr__o.png"
+                },
+                {
+                    "nome": "No Grau Kids",
+                    "descricao": "Pão de brioche, hamburguinho, queijo cheddar, molho verde, maionese e molho da casa.",
+                    "detalhe": "Serve 1 criança",
+                    "preco": 21,
+                    "preco_original": null,
+                    "ativo": 1,
+                    "foto": "uploads\/prod_1776744146_burgger_padr__o.png"
+                }
+            ]
+        },
+        {
+            "titulo": "No Grau Porções 🍟",
+            "produtos": [
+                {
+                    "nome": "Fritas",
+                    "descricao": "Porção de 300g de batata frita.",
+                    "detalhe": "Serve 1 pessoa",
+                    "preco": 17,
+                    "preco_original": null,
+                    "ativo": 1,
+                    "foto": "uploads\/prod_1776744180_ChatGPT_Image_21_de_abr._de_2026__01_01_34.png"
+                },
+                {
+                    "nome": "Fritas Cheddar e Bacon",
+                    "descricao": "Porção média com 300g de batata frita, queijo cheddar e bacon.",
+                    "detalhe": "Serve 1 pessoa",
+                    "preco": 22,
+                    "preco_original": null,
+                    "ativo": 1,
+                    "foto": "uploads\/prod_1776744200_ChatGPT_Image_21_de_abr._de_2026__01_01_34.png"
+                },
+                {
+                    "nome": "Fritas Cheddar Bacon Grande",
+                    "descricao": "Porção grande com 500g de batata frita, queijo cheddar e bacon.",
+                    "detalhe": "Serve 2 pessoas",
+                    "preco": 32,
+                    "preco_original": null,
+                    "ativo": 1,
+                    "foto": "uploads\/prod_1776744233_ChatGPT_Image_21_de_abr._de_2026__01_01_34.png"
+                }
+            ]
+        },
+        {
+            "titulo": "Refrigerantes",
+            "produtos": [
+                {
+                    "nome": "Coca-Cola",
+                    "descricao": "Coca-Cola 2 Litros",
+                    "detalhe": "",
+                    "preco": 16,
+                    "preco_original": null,
+                    "ativo": 1,
+                    "foto": "uploads\/prod_1775680488_249028-800-auto.png"
+                },
+                {
+                    "nome": "Sprite",
+                    "descricao": "Sprite 2 litros",
+                    "detalhe": "",
+                    "preco": 16,
+                    "preco_original": null,
+                    "ativo": 1,
+                    "foto": "uploads\/prod_1775684144_sprite.jpg"
+                },
+                {
+                    "nome": "Refigerante Xereta 2 litros",
+                    "descricao": "Consultar Sabores Disponiveis",
+                    "detalhe": "2 Litros",
+                    "preco": 10,
+                    "preco_original": 15,
+                    "ativo": 1,
+                    "foto": "uploads\/prod_1776743839_download.jpg"
+                },
+                {
+                    "nome": "Refrigerante Lata",
+                    "descricao": "Refrigerante em lata.",
+                    "detalhe": "",
+                    "preco": 5.5,
+                    "preco_original": null,
+                    "ativo": 1,
+                    "foto": ""
+                },
+                {
+                    "nome": "Suco Lata",
+                    "descricao": "Suco em lata.",
+                    "detalhe": "",
+                    "preco": 6,
+                    "preco_original": null,
+                    "ativo": 1,
+                    "foto": ""
+                },
+                {
+                    "nome": "Suco Natural",
+                    "descricao": "Suco natural.",
+                    "detalhe": "",
+                    "preco": 8,
+                    "preco_original": null,
+                    "ativo": 1,
+                    "foto": ""
+                }
+            ]
+        }
+    ]
+}

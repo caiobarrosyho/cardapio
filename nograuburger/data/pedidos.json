@@ -1,0 +1,2348 @@
+[
+    {
+        "id": "ped_69fbfc44555b07.64768194",
+        "data_hora": "2026-05-06 23:43:16",
+        "nome": "RUBYA STEFANI DA SILVA SANTOS",
+        "telefone": "19995393214",
+        "tipo_pedido": "Entrega",
+        "bairro": "Nova Alvorada",
+        "endereco": "Jardim Nova Alvorada rua Sebastião Moura da Silva (antiga 12) número 526\r\nCasa de esquina",
+        "referencia": "",
+        "pag_forma": "PIX",
+        "troco": "",
+        "obs": "",
+        "subtotal": "34,00",
+        "taxa_entrega": "4,00",
+        "total_final": "38,00",
+        "entrega_consultar": "0",
+        "itens": [
+            {
+                "nome": "Fritas Cheddar e Bacon",
+                "qtd": 1,
+                "preco": 22
+            },
+            {
+                "nome": "Suco Lata",
+                "qtd": 2,
+                "preco": 6
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69fbf667626c72.84003431",
+        "data_hora": "2026-05-06 23:18:15",
+        "nome": "Ingrid",
+        "telefone": "19992159850",
+        "tipo_pedido": "Entrega",
+        "bairro": "Colina",
+        "endereco": "Rua 4 número 130",
+        "referencia": "",
+        "pag_forma": "Dinheiro",
+        "troco": "100",
+        "obs": "",
+        "subtotal": "65,00",
+        "taxa_entrega": "9,00",
+        "total_final": "74,00",
+        "entrega_consultar": "0",
+        "itens": [
+            {
+                "nome": "Batata Cheddar Bacon",
+                "qtd": 1,
+                "preco": 65
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69fa857e706684.70762305",
+        "data_hora": "2026-05-05 21:04:14",
+        "nome": "Edmara silva",
+        "telefone": "19987372315",
+        "tipo_pedido": "Entrega",
+        "bairro": "Meu bairro não está na lista",
+        "endereco": "Rua martim wolk \r\nNumero 37\r\n Central park",
+        "referencia": "Casa de dois portao branco Rua sem saida",
+        "pag_forma": "Cartão de crédito",
+        "troco": "",
+        "obs": "",
+        "subtotal": "135,00",
+        "taxa_entrega": "A consultar",
+        "total_final": "Aguardando confirmação da loja",
+        "entrega_consultar": "1",
+        "itens": [
+            {
+                "nome": "Combo Família",
+                "qtd": 1,
+                "preco": 135
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69fa6a9b4872e4.97076114",
+        "data_hora": "2026-05-05 19:09:31",
+        "nome": "Cordeiro",
+        "telefone": "19993006312",
+        "tipo_pedido": "Entrega",
+        "bairro": "Paviotti",
+        "endereco": "Antiga 11 \r\nRua natalino Barbieri\r\nNúmero 85\r\nCasa Rosa muro sem pintura",
+        "referencia": "",
+        "pag_forma": "Cartão de débito",
+        "troco": "",
+        "obs": "Mandar molho!!",
+        "subtotal": "95,00",
+        "taxa_entrega": "8,00",
+        "total_final": "103,00",
+        "entrega_consultar": "0",
+        "itens": [
+            {
+                "nome": "Barca grande",
+                "qtd": 1,
+                "preco": 95
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69fa6a7deee136.11567296",
+        "data_hora": "2026-05-05 19:09:01",
+        "nome": "Cordeiro",
+        "telefone": "19993006312",
+        "tipo_pedido": "Entrega",
+        "bairro": "Paviotti",
+        "endereco": "Antiga 11 \r\nRua natalino Barbieri\r\nNúmero 85\r\nCasa Rosa muro sem pintura",
+        "referencia": "",
+        "pag_forma": "Cartão de débito",
+        "troco": "",
+        "obs": "Mandar molho!!",
+        "subtotal": "95,00",
+        "taxa_entrega": "8,00",
+        "total_final": "103,00",
+        "entrega_consultar": "0",
+        "itens": [
+            {
+                "nome": "Barca grande",
+                "qtd": 1,
+                "preco": 95
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69f955b2db2125.06983354",
+        "data_hora": "2026-05-04 23:28:02",
+        "nome": "Bruna alves da costa silva",
+        "telefone": "19988358118",
+        "tipo_pedido": "Entrega",
+        "bairro": "Paulista",
+        "endereco": "Aniceto muniz alves 304\r\nJardim paulista monte mor",
+        "referencia": "De frente a uma igreja",
+        "pag_forma": "PIX",
+        "troco": "",
+        "obs": "Mandar molhos",
+        "subtotal": "90,00",
+        "taxa_entrega": "8,00",
+        "total_final": "98,00",
+        "entrega_consultar": "0",
+        "itens": [
+            {
+                "nome": "Combo casal",
+                "qtd": 1,
+                "preco": 90
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69f8037e4985c1.45417861",
+        "data_hora": "2026-05-03 23:25:02",
+        "nome": "Joyce silva",
+        "telefone": "19988119190",
+        "tipo_pedido": "Entrega",
+        "bairro": "São Clemente",
+        "endereco": "Rua Paulo Francisco Cardoso, 159",
+        "referencia": "",
+        "pag_forma": "Cartão de crédito",
+        "troco": "",
+        "obs": "",
+        "subtotal": "68,00",
+        "taxa_entrega": "4,00",
+        "total_final": "72,00",
+        "entrega_consultar": "0",
+        "itens": [
+            {
+                "nome": "Salada Tracer",
+                "qtd": 2,
+                "preco": 34
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69f7eeb26e8b65.44066116",
+        "data_hora": "2026-05-03 21:56:18",
+        "nome": "João Vitor",
+        "telefone": "19953226496",
+        "tipo_pedido": "Entrega",
+        "bairro": "São Clemente",
+        "endereco": "Rua Santa Clara 27B",
+        "referencia": "",
+        "pag_forma": "PIX",
+        "troco": "",
+        "obs": "",
+        "subtotal": "90,00",
+        "taxa_entrega": "4,00",
+        "total_final": "94,00",
+        "entrega_consultar": "0",
+        "itens": [
+            {
+                "nome": "Combo casal",
+                "qtd": 1,
+                "preco": 90
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69f7d42383dab7.61444720",
+        "data_hora": "2026-05-03 20:02:59",
+        "nome": "Patrícia",
+        "telefone": "19995121758",
+        "tipo_pedido": "Entrega",
+        "bairro": "Paulista",
+        "endereco": "Rua Ana Lucia de Lima número 177",
+        "referencia": "Casa sobrado",
+        "pag_forma": "PIX",
+        "troco": "",
+        "obs": "",
+        "subtotal": "38,90",
+        "taxa_entrega": "8,00",
+        "total_final": "46,90",
+        "entrega_consultar": "0",
+        "itens": [
+            {
+                "nome": "No Grau Bacon",
+                "qtd": 1,
+                "preco": 28.9
+            },
+            {
+                "nome": "Refigerante Xereta 2 litros",
+                "qtd": 1,
+                "preco": 10
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69f6baea9aec56.47526637",
+        "data_hora": "2026-05-03 00:03:06",
+        "nome": "Eduardo",
+        "telefone": "19992575243",
+        "tipo_pedido": "Entrega",
+        "bairro": "São Clemente",
+        "endereco": "Av papa João Paulo II 679 São Clemente",
+        "referencia": "Na av um pouco pra baixo da escola , casa do maloka sabe onde é",
+        "pag_forma": "Cartão de crédito",
+        "troco": "",
+        "obs": "Bem servido naquele padrão de sempre",
+        "subtotal": "90,00",
+        "taxa_entrega": "4,00",
+        "total_final": "94,00",
+        "entrega_consultar": "0",
+        "itens": [
+            {
+                "nome": "Combo casal",
+                "qtd": 1,
+                "preco": 90
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69f6baa0314362.65680748",
+        "data_hora": "2026-05-03 00:01:52",
+        "nome": "ALISON PEDROZO SILVA",
+        "telefone": "19998608162",
+        "tipo_pedido": "Entrega",
+        "bairro": "São Gabriel",
+        "endereco": "R Ernesto L da Silva",
+        "referencia": "",
+        "pag_forma": "Cartão de débito",
+        "troco": "",
+        "obs": "Fritas boa pq a última vez tinha algumas que não dava pra comer",
+        "subtotal": "27,50",
+        "taxa_entrega": "8,00",
+        "total_final": "35,50",
+        "entrega_consultar": "0",
+        "itens": [
+            {
+                "nome": "Fritas Cheddar e Bacon",
+                "qtd": 1,
+                "preco": 22
+            },
+            {
+                "nome": "Refrigerante Lata",
+                "qtd": 1,
+                "preco": 5.5
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69f6b72077af45.16850193",
+        "data_hora": "2026-05-02 23:46:56",
+        "nome": "João",
+        "telefone": "19953226496",
+        "tipo_pedido": "Entrega",
+        "bairro": "São Clemente",
+        "endereco": "Rua Santa Clara 27B",
+        "referencia": "",
+        "pag_forma": "PIX",
+        "troco": "",
+        "obs": "",
+        "subtotal": "90,00",
+        "taxa_entrega": "4,00",
+        "total_final": "94,00",
+        "entrega_consultar": "0",
+        "itens": [
+            {
+                "nome": "Combo Duplo com Batata",
+                "qtd": 1,
+                "preco": 90
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69f67d5ac88247.12294595",
+        "data_hora": "2026-05-02 19:40:26",
+        "nome": "Gislaine",
+        "telefone": "19974027729",
+        "tipo_pedido": "Entrega",
+        "bairro": "São Clemente",
+        "endereco": "Dra Regina Seli Forcheti Spirnardi antiga 22 número 454",
+        "referencia": "",
+        "pag_forma": "Cartão de crédito",
+        "troco": "",
+        "obs": "",
+        "subtotal": "77,90",
+        "taxa_entrega": "4,00",
+        "total_final": "81,90",
+        "entrega_consultar": "0",
+        "itens": [
+            {
+                "nome": "No Grau Tudo",
+                "qtd": 1,
+                "preco": 32
+            },
+            {
+                "nome": "Fritas",
+                "qtd": 1,
+                "preco": 17
+            },
+            {
+                "nome": "No Grau Bacon",
+                "qtd": 1,
+                "preco": 28.9
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69f5666c548202.57991255",
+        "data_hora": "2026-05-01 23:50:20",
+        "nome": "Ingrid",
+        "telefone": "19992159850",
+        "tipo_pedido": "Entrega",
+        "bairro": "Colina",
+        "endereco": "Rua 04 número 130",
+        "referencia": "",
+        "pag_forma": "PIX",
+        "troco": "",
+        "obs": "",
+        "subtotal": "160,00",
+        "taxa_entrega": "9,00",
+        "total_final": "169,00",
+        "entrega_consultar": "0",
+        "itens": [
+            {
+                "nome": "Combo com 6 Hambúrgueres",
+                "qtd": 1,
+                "preco": 160
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69f547c15c4f00.73363261",
+        "data_hora": "2026-05-01 21:39:29",
+        "nome": "Anna",
+        "telefone": "19991740195",
+        "tipo_pedido": "Entrega",
+        "bairro": "São Clemente",
+        "endereco": "rua bento de pinha, 99, casa, portão preto",
+        "referencia": "do lado de uma árvore",
+        "pag_forma": "Cartão de débito",
+        "troco": "",
+        "obs": "",
+        "subtotal": "95,00",
+        "taxa_entrega": "4,00",
+        "total_final": "99,00",
+        "entrega_consultar": "0",
+        "itens": [
+            {
+                "nome": "Barca grande",
+                "qtd": 1,
+                "preco": 95
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69f53d476d0532.27990416",
+        "data_hora": "2026-05-01 20:54:47",
+        "nome": "Paulo chaim",
+        "telefone": "19994891740",
+        "tipo_pedido": "Entrega",
+        "bairro": "Amanda",
+        "endereco": "Henriqueta Lisboa 635 \r\nBromélias 1 bloco f ap 01",
+        "referencia": "",
+        "pag_forma": "Cartão de débito",
+        "troco": "",
+        "obs": "",
+        "subtotal": "95,00",
+        "taxa_entrega": "10,00",
+        "total_final": "105,00",
+        "entrega_consultar": "0",
+        "itens": [
+            {
+                "nome": "Barca grande",
+                "qtd": 1,
+                "preco": 95
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69f432e81831f6.14196693",
+        "data_hora": "2026-05-01 01:58:16",
+        "nome": "Maria",
+        "telefone": "19984173191",
+        "tipo_pedido": "Entrega",
+        "bairro": "Moreira",
+        "endereco": "Rua Ismaria Campos de Melo Honorato \r\nNúmero 356 B",
+        "referencia": "Antiga 2, portão pequeno branco",
+        "pag_forma": "Cartão de crédito",
+        "troco": "",
+        "obs": "",
+        "subtotal": "48,00",
+        "taxa_entrega": "10,00",
+        "total_final": "58,00",
+        "entrega_consultar": "0",
+        "itens": [
+            {
+                "nome": "Combo triplo Bacon",
+                "qtd": 1,
+                "preco": 48
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69f42b7d901d94.73958492",
+        "data_hora": "2026-05-01 01:26:37",
+        "nome": "WILLIAN APARECIDO ANTONIO",
+        "telefone": "19987818290",
+        "tipo_pedido": "Retirada no local",
+        "bairro": "Retirada no local",
+        "endereco": "Retirada no local",
+        "referencia": "",
+        "pag_forma": "PIX",
+        "troco": "",
+        "obs": "",
+        "subtotal": "106,00",
+        "taxa_entrega": "0,00",
+        "total_final": "106,00",
+        "entrega_consultar": "0",
+        "itens": [
+            {
+                "nome": "Combo Duplo com Batata",
+                "qtd": 1,
+                "preco": 90
+            },
+            {
+                "nome": "Coca-Cola",
+                "qtd": 1,
+                "preco": 16
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69f41e6579c2a3.60800863",
+        "data_hora": "2026-05-01 00:30:45",
+        "nome": "João Vitor",
+        "telefone": "19953226496",
+        "tipo_pedido": "Entrega",
+        "bairro": "São Clemente",
+        "endereco": "Rua 18, numero 955",
+        "referencia": "",
+        "pag_forma": "PIX",
+        "troco": "",
+        "obs": "",
+        "subtotal": "90,00",
+        "taxa_entrega": "4,00",
+        "total_final": "94,00",
+        "entrega_consultar": "0",
+        "itens": [
+            {
+                "nome": "Combo Duplo com Batata",
+                "qtd": 1,
+                "preco": 90
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69f41c247cbef7.95610052",
+        "data_hora": "2026-05-01 00:21:08",
+        "nome": "CAIO HENRIQUE BARROS DA SILVA",
+        "telefone": "19988293704",
+        "tipo_pedido": "Entrega",
+        "bairro": "Monte Rey",
+        "endereco": "Rua Paulo Francisco Cardoso, 159",
+        "referencia": "",
+        "pag_forma": "Cartão de crédito",
+        "troco": "",
+        "obs": "",
+        "subtotal": "110,00",
+        "taxa_entrega": "8,00",
+        "total_final": "118,00",
+        "entrega_consultar": "0",
+        "itens": [
+            {
+                "nome": "Coxinha de Frango 20g com 20 unidades",
+                "qtd": 1,
+                "preco": 15
+            },
+            {
+                "nome": "Barca grande",
+                "qtd": 1,
+                "preco": 95
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69f40fea2c1b53.90246103",
+        "data_hora": "2026-04-30 23:28:58",
+        "nome": "Jéssica Fernanda Feitosa",
+        "telefone": "19988235551",
+        "tipo_pedido": "Entrega",
+        "bairro": "São Clemente",
+        "endereco": "rua São Tomás de Aquino, número 38",
+        "referencia": "antiga 24, perto da praça",
+        "pag_forma": "Cartão de débito",
+        "troco": "",
+        "obs": "",
+        "subtotal": "90,00",
+        "taxa_entrega": "4,00",
+        "total_final": "94,00",
+        "entrega_consultar": "0",
+        "itens": [
+            {
+                "nome": "Combo casal",
+                "qtd": 1,
+                "preco": 90
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69f3d9a984bbe0.25341994",
+        "data_hora": "2026-04-30 19:37:29",
+        "nome": "Paulo Vinicius Martins",
+        "telefone": "19982500497",
+        "tipo_pedido": "Entrega",
+        "bairro": "Nova Alvorada",
+        "endereco": "Rua 3 rua Mizael Bergaton",
+        "referencia": "Casa de reboco",
+        "pag_forma": "PIX",
+        "troco": "",
+        "obs": "",
+        "subtotal": "95,00",
+        "taxa_entrega": "4,00",
+        "total_final": "99,00",
+        "entrega_consultar": "0",
+        "itens": [
+            {
+                "nome": "Barca grande",
+                "qtd": 1,
+                "preco": 95
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69f3d76e904618.01472148",
+        "data_hora": "2026-04-30 19:27:58",
+        "nome": "Vinicius Cosme",
+        "telefone": "19992711310",
+        "tipo_pedido": "Entrega",
+        "bairro": "Paulista",
+        "endereco": "Rua 10 n 50",
+        "referencia": "",
+        "pag_forma": "Dinheiro",
+        "troco": "",
+        "obs": "",
+        "subtotal": "35,50",
+        "taxa_entrega": "8,00",
+        "total_final": "43,50",
+        "entrega_consultar": "0",
+        "itens": [
+            {
+                "nome": "No Grau Duplo Bacon",
+                "qtd": 1,
+                "preco": 35.5
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69f3c8302b0f35.98248384",
+        "data_hora": "2026-04-30 18:22:56",
+        "nome": "CRISTIANE DE FRANCA CALADO",
+        "telefone": "19991136875",
+        "tipo_pedido": "Entrega",
+        "bairro": "Paviotti",
+        "endereco": "Casa\r\n110",
+        "referencia": "",
+        "pag_forma": "PIX",
+        "troco": "",
+        "obs": "Mandar molho e maionese",
+        "subtotal": "50,00",
+        "taxa_entrega": "8,00",
+        "total_final": "58,00",
+        "entrega_consultar": "0",
+        "itens": [
+            {
+                "nome": "Salada Burger",
+                "qtd": 2,
+                "preco": 25
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69f2dcbcb60f03.17772687",
+        "data_hora": "2026-04-30 01:38:20",
+        "nome": "CRISTIANE DE FRANCA CALADO",
+        "telefone": "19991136875",
+        "tipo_pedido": "Entrega",
+        "bairro": "Paviotti",
+        "endereco": "Rua Juvêncio Fernandes de Souza 110 Jardim pavioti",
+        "referencia": "Sobrado",
+        "pag_forma": "PIX",
+        "troco": "",
+        "obs": "",
+        "subtotal": "50,00",
+        "taxa_entrega": "8,00",
+        "total_final": "58,00",
+        "entrega_consultar": "0",
+        "itens": [
+            {
+                "nome": "Salada Burger",
+                "qtd": 2,
+                "preco": 25
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69f2af897f51d5.53070681",
+        "data_hora": "2026-04-29 22:25:29",
+        "nome": "Daniel",
+        "telefone": "19996569578",
+        "tipo_pedido": "Entrega",
+        "bairro": "Bela Vista",
+        "endereco": "Antiga 20 número 394 B",
+        "referencia": "Fundos",
+        "pag_forma": "Dinheiro",
+        "troco": "",
+        "obs": "",
+        "subtotal": "70,40",
+        "taxa_entrega": "4,00",
+        "total_final": "74,40",
+        "entrega_consultar": "0",
+        "itens": [
+            {
+                "nome": "Salada Burger",
+                "qtd": 1,
+                "preco": 25
+            },
+            {
+                "nome": "No Grau Triplo Bacon",
+                "qtd": 1,
+                "preco": 39.9
+            },
+            {
+                "nome": "Refrigerante Lata",
+                "qtd": 1,
+                "preco": 5.5
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69f2af2e623d82.82157329",
+        "data_hora": "2026-04-29 22:23:58",
+        "nome": "Daniel",
+        "telefone": "19996559578",
+        "tipo_pedido": "Entrega",
+        "bairro": "Bela Vista",
+        "endereco": "Antiga 20 número 394 B",
+        "referencia": "Fundos",
+        "pag_forma": "Dinheiro",
+        "troco": "",
+        "obs": "",
+        "subtotal": "64,90",
+        "taxa_entrega": "4,00",
+        "total_final": "68,90",
+        "entrega_consultar": "0",
+        "itens": [
+            {
+                "nome": "Salada Burger",
+                "qtd": 1,
+                "preco": 25
+            },
+            {
+                "nome": "No Grau Triplo Bacon",
+                "qtd": 1,
+                "preco": 39.9
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69f2888a02f9f2.52247824",
+        "data_hora": "2026-04-29 19:39:06",
+        "nome": "Vinicius Cosme",
+        "telefone": "19992711310",
+        "tipo_pedido": "Entrega",
+        "bairro": "Paviotti",
+        "endereco": "Rua 10 n 50",
+        "referencia": "",
+        "pag_forma": "Dinheiro",
+        "troco": "",
+        "obs": "",
+        "subtotal": "180,00",
+        "taxa_entrega": "8,00",
+        "total_final": "188,00",
+        "entrega_consultar": "0",
+        "itens": [
+            {
+                "nome": "Combo casal",
+                "qtd": 2,
+                "preco": 90
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69f287e9d6e0b3.62859602",
+        "data_hora": "2026-04-29 19:36:25",
+        "nome": "Vinicius Cosme",
+        "telefone": "19992711310",
+        "tipo_pedido": "Entrega",
+        "bairro": "Paulista",
+        "endereco": "Rua 10 numero 50",
+        "referencia": "",
+        "pag_forma": "Dinheiro",
+        "troco": "",
+        "obs": "",
+        "subtotal": "90,00",
+        "taxa_entrega": "8,00",
+        "total_final": "98,00",
+        "entrega_consultar": "0",
+        "itens": [
+            {
+                "nome": "Combo casal",
+                "qtd": 1,
+                "preco": 90
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69f286074b6cb5.41742137",
+        "data_hora": "2026-04-29 19:28:23",
+        "nome": "Eduardo",
+        "telefone": "19982737306",
+        "tipo_pedido": "Entrega",
+        "bairro": "Capoavinha",
+        "endereco": "Rua Mercedes N Almeida 202, antiga 9",
+        "referencia": "",
+        "pag_forma": "Cartão de crédito",
+        "troco": "",
+        "obs": "Mandar maionese a parte, bem servida",
+        "subtotal": "100,00",
+        "taxa_entrega": "10,00",
+        "total_final": "110,00",
+        "entrega_consultar": "0",
+        "itens": [
+            {
+                "nome": "Combo Duplo com Batata",
+                "qtd": 1,
+                "preco": 90
+            },
+            {
+                "nome": "Refigerante Xereta 2 litros",
+                "qtd": 1,
+                "preco": 10
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69f017125bcb44.25802528",
+        "data_hora": "2026-04-27 23:10:26",
+        "nome": "JONATAS BENTO DE CASTRO",
+        "telefone": "19988644353",
+        "tipo_pedido": "Entrega",
+        "bairro": "Paulista",
+        "endereco": "Florivaldo de Castro, antiga 7\r\nNúmero 197",
+        "referencia": "Esquina",
+        "pag_forma": "Cartão de débito",
+        "troco": "",
+        "obs": "",
+        "subtotal": "81,00",
+        "taxa_entrega": "8,00",
+        "total_final": "89,00",
+        "entrega_consultar": "0",
+        "itens": [
+            {
+                "nome": "Batata Cheddar Bacon",
+                "qtd": 1,
+                "preco": 65
+            },
+            {
+                "nome": "Coca-Cola",
+                "qtd": 1,
+                "preco": 16
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69efffbd615d55.11388263",
+        "data_hora": "2026-04-27 21:30:53",
+        "nome": "ALISON PEDROZO SILVA",
+        "telefone": "19998608162",
+        "tipo_pedido": "Entrega",
+        "bairro": "São Gabriel",
+        "endereco": "R Ernesto L da Silva",
+        "referencia": "",
+        "pag_forma": "Cartão de débito",
+        "troco": "",
+        "obs": "",
+        "subtotal": "28,00",
+        "taxa_entrega": "8,00",
+        "total_final": "36,00",
+        "entrega_consultar": "0",
+        "itens": [
+            {
+                "nome": "Fritas Cheddar e Bacon",
+                "qtd": 1,
+                "preco": 22
+            },
+            {
+                "nome": "Suco Lata",
+                "qtd": 1,
+                "preco": 6
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69effb902b9490.00578869",
+        "data_hora": "2026-04-27 21:13:04",
+        "nome": "Joseph Barbosa Rodrigues",
+        "telefone": "19981199344",
+        "tipo_pedido": "Entrega",
+        "bairro": "São Clemente",
+        "endereco": "Rua Ana de lima pinha 1220",
+        "referencia": "",
+        "pag_forma": "Cartão de crédito",
+        "troco": "",
+        "obs": "Mandar maionese temperada",
+        "subtotal": "60,90",
+        "taxa_entrega": "4,00",
+        "total_final": "64,90",
+        "entrega_consultar": "0",
+        "itens": [
+            {
+                "nome": "No Grau Bacon",
+                "qtd": 1,
+                "preco": 28.9
+            },
+            {
+                "nome": "No Grau Tudo",
+                "qtd": 1,
+                "preco": 32
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69eedfd09cbd13.24244354",
+        "data_hora": "2026-04-27 01:02:24",
+        "nome": "Ketlin Vitoria",
+        "telefone": "19983828863",
+        "tipo_pedido": "Entrega",
+        "bairro": "São Clemente",
+        "endereco": "Rua Ana Lima de pinha , 792 são Clemente",
+        "referencia": "Adega na esquina",
+        "pag_forma": "Cartão de crédito",
+        "troco": "",
+        "obs": "",
+        "subtotal": "68,00",
+        "taxa_entrega": "4,00",
+        "total_final": "72,00",
+        "entrega_consultar": "0",
+        "itens": [
+            {
+                "nome": "Salada Tracer",
+                "qtd": 2,
+                "preco": 34
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69eece326612e5.20656904",
+        "data_hora": "2026-04-26 23:47:14",
+        "nome": "nilmara",
+        "telefone": "19986045369",
+        "tipo_pedido": "Entrega",
+        "bairro": "São Clemente",
+        "endereco": "rua joão de deus sproesser,427",
+        "referencia": "",
+        "pag_forma": "Cartão de crédito",
+        "troco": "",
+        "obs": "",
+        "subtotal": "65,00",
+        "taxa_entrega": "4,00",
+        "total_final": "69,00",
+        "entrega_consultar": "0",
+        "itens": [
+            {
+                "nome": "Batata Cheddar Bacon",
+                "qtd": 1,
+                "preco": 65
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69ee9f2610ea02.82024498",
+        "data_hora": "2026-04-26 20:26:30",
+        "nome": "Jefferson Nunes",
+        "telefone": "19988102697",
+        "tipo_pedido": "Entrega",
+        "bairro": "Paulista",
+        "endereco": "Rua 26 \r\nNúmero 108",
+        "referencia": "",
+        "pag_forma": "PIX",
+        "troco": "",
+        "obs": "",
+        "subtotal": "48,00",
+        "taxa_entrega": "8,00",
+        "total_final": "56,00",
+        "entrega_consultar": "0",
+        "itens": [
+            {
+                "nome": "Combo triplo Bacon",
+                "qtd": 1,
+                "preco": 48
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69ee9e9b5a5a36.04863657",
+        "data_hora": "2026-04-26 20:24:11",
+        "nome": "Jenifer",
+        "telefone": "19994525680",
+        "tipo_pedido": "Entrega",
+        "bairro": "Nova Alvorada",
+        "endereco": "Rua Guilherme Júlio schefer 33",
+        "referencia": "Frente com a adega do grilo",
+        "pag_forma": "Dinheiro",
+        "troco": "100",
+        "obs": "",
+        "subtotal": "90,00",
+        "taxa_entrega": "4,00",
+        "total_final": "94,00",
+        "entrega_consultar": "0",
+        "itens": [
+            {
+                "nome": "Combo casal",
+                "qtd": 1,
+                "preco": 90
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69ee8df7047742.26438128",
+        "data_hora": "2026-04-26 19:13:11",
+        "nome": "Fatima Batista",
+        "telefone": "19983413125",
+        "tipo_pedido": "Entrega",
+        "bairro": "Nova Alvorada",
+        "endereco": "Rua João Paulo Rodrigues De Lima\r\nCasa,66 \r\nAntiga rua 10\r\nJd nova alvorada",
+        "referencia": "",
+        "pag_forma": "Cartão de crédito",
+        "troco": "",
+        "obs": "Tirar o cheedar e substituir por catupiry.",
+        "subtotal": "34,40",
+        "taxa_entrega": "4,00",
+        "total_final": "38,40",
+        "entrega_consultar": "0",
+        "itens": [
+            {
+                "nome": "No Grau Bacon",
+                "qtd": 1,
+                "preco": 28.9
+            },
+            {
+                "nome": "Refrigerante Lata",
+                "qtd": 1,
+                "preco": 5.5
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69ed8f83cc34d6.93286636",
+        "data_hora": "2026-04-26 01:07:31",
+        "nome": "Geovane",
+        "telefone": "19999805939",
+        "tipo_pedido": "Entrega",
+        "bairro": "Amanda",
+        "endereco": "Rua Henriqueta Lisboa 635, ap B44",
+        "referencia": "Ap",
+        "pag_forma": "PIX",
+        "troco": "",
+        "obs": "",
+        "subtotal": "55,00",
+        "taxa_entrega": "10,00",
+        "total_final": "65,00",
+        "entrega_consultar": "0",
+        "itens": [
+            {
+                "nome": "Barca P",
+                "qtd": 1,
+                "preco": 55
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69ed71e7d456c6.84807290",
+        "data_hora": "2026-04-25 23:01:11",
+        "nome": "Daniel",
+        "telefone": "19996569578",
+        "tipo_pedido": "Entrega",
+        "bairro": "Bela Vista",
+        "endereco": "Antiga 20 casa 394 b",
+        "referencia": "Fundos",
+        "pag_forma": "PIX",
+        "troco": "",
+        "obs": "",
+        "subtotal": "95,50",
+        "taxa_entrega": "4,00",
+        "total_final": "99,50",
+        "entrega_consultar": "0",
+        "itens": [
+            {
+                "nome": "Combo casal",
+                "qtd": 1,
+                "preco": 90
+            },
+            {
+                "nome": "Refrigerante Lata",
+                "qtd": 1,
+                "preco": 5.5
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69ebf745ad3b79.57008510",
+        "data_hora": "2026-04-24 20:05:41",
+        "nome": "Ketelyn de freitas",
+        "telefone": "19987651216",
+        "tipo_pedido": "Entrega",
+        "bairro": "Colina",
+        "endereco": "RUA PASTOR ORIBO PEREIRA DO SANTO, 50 - MONTE MOR - SP - JARDIM COLINA I - 13198596",
+        "referencia": "Portão azul fechado, próximo ao depósito de gás",
+        "pag_forma": "PIX",
+        "troco": "",
+        "obs": "",
+        "subtotal": "90,00",
+        "taxa_entrega": "9,00",
+        "total_final": "99,00",
+        "entrega_consultar": "0",
+        "itens": [
+            {
+                "nome": "Combo casal",
+                "qtd": 1,
+                "preco": 90
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69eacf9dbd8969.83041531",
+        "data_hora": "2026-04-23 23:04:13",
+        "nome": "Daniel",
+        "telefone": "19996569578",
+        "tipo_pedido": "Entrega",
+        "bairro": "Bela Vista",
+        "endereco": "Antiga 20 casa 394 B",
+        "referencia": "Fundos",
+        "pag_forma": "Cartão de débito",
+        "troco": "",
+        "obs": "",
+        "subtotal": "45,40",
+        "taxa_entrega": "4,00",
+        "total_final": "49,40",
+        "entrega_consultar": "0",
+        "itens": [
+            {
+                "nome": "No Grau Triplo Bacon",
+                "qtd": 1,
+                "preco": 39.9
+            },
+            {
+                "nome": "Refrigerante Lata",
+                "qtd": 1,
+                "preco": 5.5
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69eac8573998d3.21844648",
+        "data_hora": "2026-04-23 22:33:11",
+        "nome": "Vinicius",
+        "telefone": "19992711310",
+        "tipo_pedido": "Entrega",
+        "bairro": "Colorado",
+        "endereco": "Rua 3 numero 10",
+        "referencia": "",
+        "pag_forma": "Dinheiro",
+        "troco": "",
+        "obs": "",
+        "subtotal": "31,00",
+        "taxa_entrega": "5,00",
+        "total_final": "36,00",
+        "entrega_consultar": "0",
+        "itens": [
+            {
+                "nome": "No Grau Twin",
+                "qtd": 1,
+                "preco": 31
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69e9631f1574f4.20612864",
+        "data_hora": "2026-04-22 21:09:03",
+        "nome": "ALISON PEDROZO SILVA",
+        "telefone": "19998608162",
+        "tipo_pedido": "Entrega",
+        "bairro": "São Gabriel",
+        "endereco": "R Ernesto L da Silva",
+        "referencia": "",
+        "pag_forma": "Cartão de débito",
+        "troco": "",
+        "obs": "",
+        "subtotal": "27,50",
+        "taxa_entrega": "8,00",
+        "total_final": "35,50",
+        "entrega_consultar": "0",
+        "itens": [
+            {
+                "nome": "Fritas Cheddar e Bacon",
+                "qtd": 1,
+                "preco": 22
+            },
+            {
+                "nome": "Refrigerante Lata",
+                "qtd": 1,
+                "preco": 5.5
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69e95cf8d88f60.60009726",
+        "data_hora": "2026-04-22 20:42:48",
+        "nome": "Vinicius Cosme dos Santos Barbosa",
+        "telefone": "19992711310",
+        "tipo_pedido": "Entrega",
+        "bairro": "Said Jorge",
+        "endereco": "15 numero 403",
+        "referencia": "",
+        "pag_forma": "PIX",
+        "troco": "",
+        "obs": "",
+        "subtotal": "160,00",
+        "taxa_entrega": "8,00",
+        "total_final": "168,00",
+        "entrega_consultar": "0",
+        "itens": [
+            {
+                "nome": "Barca grande",
+                "qtd": 1,
+                "preco": 95
+            },
+            {
+                "nome": "Batata Cheddar Bacon",
+                "qtd": 1,
+                "preco": 65
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69e71734ec9a87.08954319",
+        "data_hora": "2026-04-21 03:20:36",
+        "nome": "CAIO HENRIQUE BARROS DA SILVA",
+        "telefone": "19988293704",
+        "tipo_pedido": "Entrega",
+        "bairro": "Meu bairro não está na lista",
+        "endereco": "Rua Paulo Francisco Cardoso, 159",
+        "referencia": "",
+        "pag_forma": "Dinheiro",
+        "troco": "",
+        "obs": "",
+        "subtotal": "32,00",
+        "taxa_entrega": "A consultar",
+        "total_final": "Aguardando confirmação da loja",
+        "entrega_consultar": "1",
+        "itens": [
+            {
+                "nome": "Fritas Cheddar Bacon Grande",
+                "qtd": 1,
+                "preco": 32
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69e716fd656489.83743799",
+        "data_hora": "2026-04-21 03:19:41",
+        "nome": "CAIO HENRIQUE BARROS DA SILVA",
+        "telefone": "19988293704",
+        "tipo_pedido": "Entrega",
+        "bairro": "Said Jorge",
+        "endereco": "Rua Paulo Francisco Cardoso, 159",
+        "referencia": "",
+        "pag_forma": "Dinheiro",
+        "troco": "",
+        "obs": "",
+        "subtotal": "32,00",
+        "taxa_entrega": "8,00",
+        "total_final": "40,00",
+        "entrega_consultar": "0",
+        "itens": [
+            {
+                "nome": "Fritas Cheddar Bacon Grande",
+                "qtd": 1,
+                "preco": 32
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69e7165fd096b6.76772622",
+        "data_hora": "2026-04-21 03:17:03",
+        "nome": "CAIO HENRIQUE BARROS DA SILVA",
+        "telefone": "19988293704",
+        "tipo_pedido": "Entrega",
+        "bairro": "São Clemente",
+        "endereco": "Rua Paulo Francisco Cardoso, 159",
+        "referencia": "",
+        "pag_forma": "Dinheiro",
+        "troco": "",
+        "obs": "",
+        "subtotal": "32,00",
+        "taxa_entrega": "4,00",
+        "total_final": "36,00",
+        "entrega_consultar": "0",
+        "itens": [
+            {
+                "nome": "Fritas Cheddar Bacon Grande",
+                "qtd": 1,
+                "preco": 32
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69e71428f268d4.16898856",
+        "data_hora": "2026-04-21 03:07:36",
+        "nome": "CAIO HENRIQUE BARROS DA SILVA",
+        "telefone": "19988293704",
+        "tipo_pedido": "Entrega",
+        "bairro": "São Clemente",
+        "endereco": "Rua Paulo Francisco Cardoso, 159",
+        "referencia": "",
+        "pag_forma": "Dinheiro",
+        "troco": "",
+        "obs": "",
+        "subtotal": "32,00",
+        "taxa_entrega": "4,00",
+        "total_final": "36,00",
+        "entrega_consultar": "0",
+        "itens": [
+            {
+                "nome": "Fritas Cheddar Bacon Grande",
+                "qtd": 1,
+                "preco": 32
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69e713e1ee4b96.03987917",
+        "data_hora": "2026-04-21 03:06:25",
+        "nome": "CAIO HENRIQUE BARROS DA SILVA",
+        "telefone": "19988293704",
+        "tipo_pedido": "Entrega",
+        "bairro": "São Clemente",
+        "endereco": "Rua Paulo Francisco Cardoso, 159",
+        "referencia": "dfsdfsd",
+        "pag_forma": "Dinheiro",
+        "troco": "",
+        "obs": "",
+        "subtotal": "81,00",
+        "taxa_entrega": "4,00",
+        "total_final": "85,00",
+        "entrega_consultar": "0",
+        "itens": [
+            {
+                "nome": "Fritas Cheddar Bacon Grande",
+                "qtd": 1,
+                "preco": 32
+            },
+            {
+                "nome": "Salada Burger",
+                "qtd": 1,
+                "preco": 25
+            },
+            {
+                "nome": "No Grau Burger",
+                "qtd": 1,
+                "preco": 24
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69e70dfbe75d28.42857148",
+        "data_hora": "2026-04-21 02:41:15",
+        "nome": "CAIO HENRIQUE BARROS DA SILVA",
+        "telefone": "19988293704",
+        "tipo_pedido": "Entrega",
+        "bairro": "Paviotti",
+        "endereco": "Rua Paulo Francisco Cardoso, 159",
+        "referencia": "",
+        "pag_forma": "Dinheiro",
+        "troco": "",
+        "obs": "",
+        "subtotal": "280,00",
+        "taxa_entrega": "8,00",
+        "total_final": "288,00",
+        "entrega_consultar": "0",
+        "itens": [
+            {
+                "nome": "Barca grande",
+                "qtd": 2,
+                "preco": 95
+            },
+            {
+                "nome": "Salada Burger",
+                "qtd": 1,
+                "preco": 25
+            },
+            {
+                "nome": "Batata Cheddar Bacon",
+                "qtd": 1,
+                "preco": 65
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69e708fd787a10.76913545",
+        "data_hora": "2026-04-21 02:19:57",
+        "nome": "Caio",
+        "telefone": "19988293704",
+        "bairro": "Panorama",
+        "endereco": "Rua Paulo Francisco Cardoso, 159",
+        "referencia": "",
+        "pag_forma": "Cartão de crédito",
+        "troco": "",
+        "obs": "",
+        "subtotal": "95,00",
+        "taxa_entrega": "10,00",
+        "total_final": "105,00",
+        "entrega_consultar": "0",
+        "itens": [
+            {
+                "nome": "Barca grande",
+                "qtd": 1,
+                "preco": 95
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69e708d0e046c3.05583844",
+        "data_hora": "2026-04-21 02:19:12",
+        "nome": "Caio",
+        "telefone": "19988293704",
+        "bairro": "Meu bairro não está na lista",
+        "endereco": "Rua Paulo Francisco Cardoso, 159",
+        "referencia": "",
+        "pag_forma": "Cartão de crédito",
+        "troco": "",
+        "obs": "",
+        "subtotal": "95,00",
+        "taxa_entrega": "A consultar",
+        "total_final": "Aguardando confirmação da loja",
+        "entrega_consultar": "0",
+        "itens": [
+            {
+                "nome": "Barca grande",
+                "qtd": 1,
+                "preco": 95
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69d6f742471ee9.55127720",
+        "data_hora": "2026-04-08 21:48:02",
+        "nome": "Joyce silva",
+        "telefone": "19988119190",
+        "endereco": "Rua Paulo Francisco Cardoso\r\n145",
+        "referencia": "",
+        "pag_forma": "PIX",
+        "troco": "",
+        "obs": "",
+        "subtotal": "95,00",
+        "itens": [
+            {
+                "nome": "Barca grande",
+                "qtd": 1,
+                "preco": 95
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69d6f729d63d98.96646330",
+        "data_hora": "2026-04-08 21:47:37",
+        "nome": "Kamilly Barros da Silva",
+        "telefone": "19988119190",
+        "endereco": "Rua Paulo Francisco Cardoso\r\n159",
+        "referencia": "",
+        "pag_forma": "PIX",
+        "troco": "",
+        "obs": "",
+        "subtotal": "95,00",
+        "itens": [
+            {
+                "nome": "Barca grande",
+                "qtd": 1,
+                "preco": 95
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69d6f6a7d03250.69654353",
+        "data_hora": "2026-04-08 21:45:27",
+        "nome": "Kamilly Barros da Silva",
+        "telefone": "19988119190",
+        "endereco": "Rua Paulo Francisco Cardoso\r\n159",
+        "referencia": "",
+        "pag_forma": "PIX",
+        "troco": "",
+        "obs": "",
+        "subtotal": "95,00",
+        "itens": [
+            {
+                "nome": "Barca grande",
+                "qtd": 1,
+                "preco": 95
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69d6f67c0510b9.95398106",
+        "data_hora": "2026-04-08 21:44:44",
+        "nome": "Vinicius",
+        "telefone": "19992711310",
+        "endereco": "Rua 15 sao clemente numero 403",
+        "referencia": "Portão azul",
+        "pag_forma": "Dinheiro",
+        "troco": "150",
+        "obs": "",
+        "subtotal": "111,00",
+        "itens": [
+            {
+                "nome": "Barca grande",
+                "qtd": 1,
+                "preco": 95
+            },
+            {
+                "nome": "Sprite",
+                "qtd": 1,
+                "preco": 16
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69d6b1af6a1e95.43815065",
+        "data_hora": "2026-04-08 16:51:11",
+        "nome": "CAIO HENRIQUE BARROS DA SILVA",
+        "telefone": "19988293704",
+        "endereco": "Rua Paulo Francisco Cardoso, 159",
+        "referencia": "",
+        "pag_forma": "Dinheiro",
+        "troco": "",
+        "obs": "",
+        "subtotal": "140,00",
+        "itens": [
+            {
+                "nome": "Bolinha de Queijo frita 20 unidades (20g cada)",
+                "qtd": 1,
+                "preco": 15
+            },
+            {
+                "nome": "Coxinha de Frango 20g com 20 unidades",
+                "qtd": 2,
+                "preco": 15
+            },
+            {
+                "nome": "Barca grande",
+                "qtd": 1,
+                "preco": 95
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69d6abd9bcc2f4.83827353",
+        "data_hora": "2026-04-08 16:26:17",
+        "nome": "CAIO HENRIQUE BARROS DA SILVA",
+        "telefone": "19988293704",
+        "endereco": "Rua Paulo Francisco Cardoso, 159",
+        "referencia": "",
+        "pag_forma": "Dinheiro",
+        "troco": "",
+        "obs": "",
+        "subtotal": "140,00",
+        "itens": [
+            {
+                "nome": "Bolinha de Queijo frita 20 unidades (20g cada)",
+                "qtd": 1,
+                "preco": 15
+            },
+            {
+                "nome": "Coxinha de Frango 20g com 20 unidades",
+                "qtd": 2,
+                "preco": 15
+            },
+            {
+                "nome": "Barca grande",
+                "qtd": 1,
+                "preco": 95
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69d4ac376bf053.98255483",
+        "data_hora": "2026-04-07 04:03:19",
+        "nome": "Vinicius Cosme dos santos barbosa",
+        "telefone": "019992711310",
+        "endereco": "Rua Ana de lima pinha são clemente número 403",
+        "referencia": "Portão azul",
+        "pag_forma": "Dinheiro",
+        "troco": "100",
+        "obs": "",
+        "subtotal": "90,00",
+        "itens": [
+            {
+                "nome": "Combo casal",
+                "qtd": 1,
+                "preco": 90
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69ce742fca5409.23357804",
+        "data_hora": "2026-04-02 10:50:39",
+        "nome": "Kamilly Barros da Silva",
+        "telefone": "19988119190",
+        "endereco": "Rua Paulo Francisco Cardoso\r\n159",
+        "referencia": "",
+        "pag_forma": "PIX",
+        "troco": "",
+        "obs": "",
+        "subtotal": "134,98",
+        "itens": [
+            {
+                "nome": "Coxinha de Frango 20g com 20 unidades",
+                "qtd": 1,
+                "preco": 15
+            },
+            {
+                "nome": "Barca do NoGrau",
+                "qtd": 1,
+                "preco": 59.99
+            },
+            {
+                "nome": "Barca do NoGrau",
+                "qtd": 1,
+                "preco": 59.99
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69cdebfde60019.76284488",
+        "data_hora": "2026-04-02 01:09:33",
+        "nome": "Caio",
+        "telefone": "19974129679",
+        "endereco": "Bento de pinha 1000",
+        "referencia": "Sobrado",
+        "pag_forma": "Dinheiro",
+        "troco": "100",
+        "obs": "Tirar presunto e queijo",
+        "subtotal": "35,00",
+        "itens": [
+            {
+                "nome": "Coxinha de Frango 20g com 20 unidades",
+                "qtd": 1,
+                "preco": 15
+            },
+            {
+                "nome": "15 Churros de Doce de Leite 15g",
+                "qtd": 1,
+                "preco": 20
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69cdeac13344e2.76193671",
+        "data_hora": "2026-04-02 01:04:17",
+        "nome": "CAIO HENRIQUE BARROS DA SILVA",
+        "telefone": "19988293704",
+        "endereco": "Rua Paulo Francisco Cardoso, 159",
+        "referencia": "sobrado",
+        "pag_forma": "Dinheiro",
+        "troco": "200",
+        "obs": "chamar na casa mais alto",
+        "subtotal": "110,00",
+        "itens": [
+            {
+                "nome": "Cento Misto (100 unidades)",
+                "qtd": 2,
+                "preco": 55
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69cde899c3a9c6.31165264",
+        "data_hora": "2026-04-02 00:55:05",
+        "nome": "CAIO HENRIQUE BARROS DA SILVA",
+        "telefone": "19988293704",
+        "endereco": "Rua Paulo Francisco Cardoso, 159",
+        "referencia": "sobrado",
+        "pag_forma": "Dinheiro",
+        "troco": "200",
+        "obs": "chamar na casa mais alto",
+        "subtotal": "110,00",
+        "itens": [
+            {
+                "nome": "Cento Misto (100 unidades)",
+                "qtd": 2,
+                "preco": 55
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_6997a335b87582.14577730",
+        "data_hora": "2026-02-19 20:56:37",
+        "nome": "CAIO HENRIQUE BARROS DA SILVA",
+        "telefone": "19988293704",
+        "endereco": "Rua Paulo Francisco Cardoso, 159",
+        "referencia": "",
+        "pag_forma": "PIX",
+        "troco": "",
+        "obs": "",
+        "subtotal": "119,00",
+        "itens": [
+            {
+                "nome": "50 Salgados Diversos de 20 gramas",
+                "qtd": 2,
+                "preco": 32
+            },
+            {
+                "nome": "Cento Misto (100 unidades)",
+                "qtd": 1,
+                "preco": 55
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69656fed2d4399.06594617",
+        "data_hora": "2026-01-12 19:04:29",
+        "nome": "CAIO HENRIQUE BARROS DA SILVA",
+        "telefone": "19988293704",
+        "endereco": "Hortolândia",
+        "referencia": "",
+        "pag_forma": "PIX",
+        "troco": "",
+        "obs": "",
+        "subtotal": "35,00",
+        "itens": [
+            {
+                "nome": "Risole de Carne",
+                "qtd": 1,
+                "preco": 15
+            },
+            {
+                "nome": "15 Churros de Doce de Leite 15g",
+                "qtd": 1,
+                "preco": 20
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_695df31dc6c196.76597408",
+        "data_hora": "2026-01-07 02:46:05",
+        "nome": "CAIO HENRIQUE BARROS DA SILVA",
+        "telefone": "19988293704",
+        "endereco": "Hortolândia",
+        "referencia": "",
+        "pag_forma": "Cartão de débito",
+        "troco": "",
+        "obs": "",
+        "subtotal": "15,00",
+        "itens": [
+            {
+                "nome": "Coxinha de Frango 20g com 20 unidades",
+                "qtd": 1,
+                "preco": 15
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_695dcb6f906601.67561887",
+        "data_hora": "2026-01-06 23:56:47",
+        "nome": "CAIO HENRIQUE BARROS DA SILVA",
+        "telefone": "19988293704",
+        "endereco": "Hortolândia",
+        "referencia": "",
+        "pag_forma": "PIX",
+        "troco": "",
+        "obs": "",
+        "subtotal": "15,00",
+        "itens": [
+            {
+                "nome": "Coxinha de Frango 20g com 20 unidades",
+                "qtd": 1,
+                "preco": 15
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_695d20b7067108.74460628",
+        "data_hora": "2026-01-06 11:48:23",
+        "nome": "Kamilly Barros da Silva",
+        "telefone": "19988293704",
+        "endereco": "Betim",
+        "referencia": "",
+        "pag_forma": "Dinheiro",
+        "troco": "",
+        "obs": "",
+        "subtotal": "15,00",
+        "itens": [
+            {
+                "nome": "Coxinha de Frango 20g com 20 unidades",
+                "qtd": 1,
+                "preco": 15
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_695d1fce1cfe93.69619427",
+        "data_hora": "2026-01-06 11:44:30",
+        "nome": "CAIO HENRIQUE BARROS DA SILVA",
+        "telefone": "19988293704",
+        "endereco": "Rua Paulo Francisco Cardoso, 159",
+        "referencia": "Casa azul são clemente Monte mor",
+        "pag_forma": "PIX",
+        "troco": "",
+        "obs": "Mandar bem quentinho",
+        "subtotal": "92,00",
+        "itens": [
+            {
+                "nome": "Cento Misto (100 unidades)",
+                "qtd": 1,
+                "preco": 60
+            },
+            {
+                "nome": "50 Salgados Diversos de 20 gramas",
+                "qtd": 1,
+                "preco": 32
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_695d1f3cba70e4.68667323",
+        "data_hora": "2026-01-06 11:42:04",
+        "nome": "CAIO HENRIQUE BARROS DA SILVA",
+        "telefone": "19988293704",
+        "endereco": "Hortolândia",
+        "referencia": "",
+        "pag_forma": "PIX",
+        "troco": "",
+        "obs": "",
+        "subtotal": "15,90",
+        "itens": [
+            {
+                "nome": "Coxinha de Frango 20g com 20 unidades",
+                "qtd": 1,
+                "preco": 15.9
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_695453f41ed902.52731059",
+        "data_hora": "2025-12-30 19:36:36",
+        "nome": "CAIO HENRIQUE BARROS DA SILVA",
+        "telefone": "19988293704",
+        "endereco": "Hortolândiadfsdfsdfsdfsdfsdfsdfs",
+        "referencia": "casa azul",
+        "pag_forma": "Dinheiro",
+        "troco": "1500",
+        "obs": "srdasdasfasedfasdfsdfsdfsd",
+        "subtotal": "240,00",
+        "itens": [
+            {
+                "nome": "Cento Misto (100 unidades)",
+                "qtd": 4,
+                "preco": 60
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69545131eb36d1.76438182",
+        "data_hora": "2025-12-30 19:24:49",
+        "nome": "CAIO HENRIQUE BARROS DA SILVA",
+        "telefone": "19988293704",
+        "endereco": "Hortolândia glukofklujyghfoluiyfluyftiokutyduijyrtsediytroiuytpçiouypçiouyt",
+        "referencia": "",
+        "pag_forma": "Dinheiro",
+        "troco": "",
+        "obs": "",
+        "subtotal": "15,90",
+        "itens": [
+            {
+                "nome": "Coxinha de Frango 20g com 20 unidades",
+                "qtd": 1,
+                "preco": 15.9
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_695451023537c5.97641034",
+        "data_hora": "2025-12-30 19:24:02",
+        "nome": "CAIO HENRIQUE BARROS DA SILVA",
+        "telefone": "19988293704",
+        "endereco": "Hortolândia",
+        "referencia": "",
+        "pag_forma": "Dinheiro",
+        "troco": "",
+        "obs": "",
+        "subtotal": "15,90",
+        "itens": [
+            {
+                "nome": "Coxinha de Frango 20g com 20 unidades",
+                "qtd": 1,
+                "preco": 15.9
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69544f34ede3b5.71749589",
+        "data_hora": "2025-12-30 19:16:20",
+        "nome": "CAIO HENRIQUE BARROS DA SILVA",
+        "telefone": "19988293704",
+        "endereco": "Hortolândia",
+        "referencia": "",
+        "pag_forma": "Dinheiro",
+        "troco": "",
+        "obs": "",
+        "subtotal": "15,90",
+        "itens": [
+            {
+                "nome": "Coxinha de Frango 20g com 20 unidades",
+                "qtd": 1,
+                "preco": 15.9
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69544f1c32e464.54300144",
+        "data_hora": "2025-12-30 19:15:56",
+        "nome": "CAIO HENRIQUE BARROS DA SILVA",
+        "telefone": "19988293704",
+        "endereco": "Hortolândia",
+        "referencia": "",
+        "pag_forma": "Dinheiro",
+        "troco": "",
+        "obs": "",
+        "subtotal": "15,90",
+        "itens": [
+            {
+                "nome": "Coxinha de Frango 20g com 20 unidades",
+                "qtd": 1,
+                "preco": 15.9
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69544f0213da11.13173509",
+        "data_hora": "2025-12-30 19:15:30",
+        "nome": "CAIO HENRIQUE BARROS DA SILVA",
+        "telefone": "19988293704",
+        "endereco": "Hortolândia",
+        "referencia": "",
+        "pag_forma": "Dinheiro",
+        "troco": "",
+        "obs": "",
+        "subtotal": "15,90",
+        "itens": [
+            {
+                "nome": "Coxinha de Frango 20g com 20 unidades",
+                "qtd": 1,
+                "preco": 15.9
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69544eeef0b417.32722309",
+        "data_hora": "2025-12-30 19:15:10",
+        "nome": "CAIO HENRIQUE BARROS DA SILVA",
+        "telefone": "19988293704",
+        "endereco": "Hortolândia",
+        "referencia": "",
+        "pag_forma": "Dinheiro",
+        "troco": "",
+        "obs": "",
+        "subtotal": "15,90",
+        "itens": [
+            {
+                "nome": "Coxinha de Frango 20g com 20 unidades",
+                "qtd": 1,
+                "preco": 15.9
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69544cfb70a2e8.38984279",
+        "data_hora": "2025-12-30 19:06:51",
+        "nome": "CAIO HENRIQUE BARROS DA SILVA",
+        "telefone": "19988293704",
+        "endereco": "Hortolândia",
+        "referencia": "",
+        "pag_forma": "Dinheiro",
+        "troco": "",
+        "obs": "",
+        "subtotal": "15,90",
+        "itens": [
+            {
+                "nome": "Coxinha de Frango 20g com 20 unidades",
+                "qtd": 1,
+                "preco": 15.9
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_69544c6c66ea81.49747597",
+        "data_hora": "2025-12-30 19:04:28",
+        "nome": "CAIO HENRIQUE BARROS DA SILVA",
+        "telefone": "19988293704",
+        "endereco": "Hortolândia",
+        "referencia": "",
+        "pag_forma": "Dinheiro",
+        "troco": "",
+        "obs": "",
+        "subtotal": "15,90",
+        "itens": [
+            {
+                "nome": "Coxinha de Frango 20g com 20 unidades",
+                "qtd": 1,
+                "preco": 15.9
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_695449d7a0d8f8.24527714",
+        "data_hora": "2025-12-30 18:53:27",
+        "nome": "CAIO HENRIQUE BARROS DA SILVA",
+        "telefone": "19988293704",
+        "endereco": "Hortolândia",
+        "referencia": "",
+        "pag_forma": "Dinheiro",
+        "troco": "",
+        "obs": "",
+        "subtotal": "15,90",
+        "itens": [
+            {
+                "nome": "Coxinha de Frango 20g com 20 unidades",
+                "qtd": 1,
+                "preco": 15.9
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_6954491eb488e8.28519764",
+        "data_hora": "2025-12-30 18:50:22",
+        "nome": "CAIO HENRIQUE BARROS DA SILVA",
+        "telefone": "19988293704",
+        "endereco": "Hortolândia",
+        "referencia": "",
+        "pag_forma": "Dinheiro",
+        "troco": "",
+        "obs": "",
+        "subtotal": "15,90",
+        "itens": [
+            {
+                "nome": "Coxinha de Frango 20g com 20 unidades",
+                "qtd": 1,
+                "preco": 15.9
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_695448fe360db5.28694614",
+        "data_hora": "2025-12-30 18:49:50",
+        "nome": "CAIO HENRIQUE BARROS DA SILVA",
+        "telefone": "19988293704",
+        "endereco": "Hortolândia",
+        "referencia": "",
+        "pag_forma": "Dinheiro",
+        "troco": "",
+        "obs": "",
+        "subtotal": "15,90",
+        "itens": [
+            {
+                "nome": "Coxinha de Frango 20g com 20 unidades",
+                "qtd": 1,
+                "preco": 15.9
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_6952f9b7c78e69.13868708",
+        "data_hora": "2025-12-29 18:59:19",
+        "nome": "CAIO HENRIQUE BARROS DA SILVA",
+        "telefone": "19988293704",
+        "endereco": "Rua Paulo Francisco Cardoso, 159",
+        "referencia": "",
+        "pag_forma": "PIX",
+        "troco": "",
+        "obs": "",
+        "subtotal": "15,90",
+        "itens": [
+            {
+                "nome": "Bolinha de Queijo frita 20 unidades (20g cada)",
+                "qtd": 1,
+                "preco": 15.9
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_6952dce0c9cbb6.15873325",
+        "data_hora": "2025-12-29 16:56:16",
+        "nome": "CAIO HENRIQUE BARROS DA SILVA",
+        "telefone": "19988293704",
+        "endereco": "Hortolândia",
+        "referencia": "casa",
+        "pag_forma": "Dinheiro",
+        "troco": "100",
+        "obs": "sdssdsadssadasdasdasd",
+        "subtotal": "224,00",
+        "itens": [
+            {
+                "nome": "50 Salgados Diversos de 20 gramas",
+                "qtd": 7,
+                "preco": 32
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_6952dc19100c72.71985990",
+        "data_hora": "2025-12-29 16:52:57",
+        "nome": "Joyce Regina da Silva",
+        "telefone": "19988119190",
+        "endereco": "Rua Bento de Pinha\r\n1103 são clemente",
+        "referencia": "Sobrado azul",
+        "pag_forma": "Dinheiro",
+        "troco": "200",
+        "obs": "Gatinho",
+        "subtotal": "80,90",
+        "itens": [
+            {
+                "nome": "Coxinha de Frango 20g com 20 unidades",
+                "qtd": 1,
+                "preco": 15.9
+            },
+            {
+                "nome": "Coca-Cola 200ml",
+                "qtd": 1,
+                "preco": 5
+            },
+            {
+                "nome": "Cento Misto (100 unidades)",
+                "qtd": 1,
+                "preco": 60
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_6952d7da24d761.48839391",
+        "data_hora": "2025-12-29 16:34:50",
+        "nome": "Joyce Regina da Silva",
+        "telefone": "19988119190",
+        "endereco": "Rua Bento de Pinha\r\n1103 são clemente",
+        "referencia": "Sobrado azul",
+        "pag_forma": "Dinheiro",
+        "troco": "200",
+        "obs": "Gatinho",
+        "subtotal": "80,90",
+        "itens": [
+            {
+                "nome": "Coxinha de Frango 20g com 20 unidades",
+                "qtd": 1,
+                "preco": 15.9
+            },
+            {
+                "nome": "Coca-Cola 200ml",
+                "qtd": 1,
+                "preco": 5
+            },
+            {
+                "nome": "Cento Misto (100 unidades)",
+                "qtd": 1,
+                "preco": 60
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_6952d6aac110a1.73897306",
+        "data_hora": "2025-12-29 16:29:46",
+        "nome": "CAIO HENRIQUE BARROS DA SILVA",
+        "telefone": "19988293704",
+        "endereco": "Rua Paulo Francisco Cardoso, 159",
+        "referencia": "",
+        "pag_forma": "Cartão de débito",
+        "troco": "",
+        "obs": "",
+        "subtotal": "15,90",
+        "itens": [
+            {
+                "nome": "Coxinha de Frango 20g com 20 unidades",
+                "qtd": 1,
+                "preco": 15.9
+            }
+        ],
+        "status": "em_impressao"
+    },
+    {
+        "id": "ped_695223913db5e3.46915858",
+        "data_hora": "2025-12-29 03:45:37",
+        "nome": "Joyce",
+        "telefone": "19988293704",
+        "endereco": "Rua Paulo Francisco Cardoso, 159",
+        "referencia": "",
+        "pag_forma": "Dinheiro",
+        "troco": "20",
+        "obs": "",
+        "subtotal": "32,00",
+        "itens": [
+            {
+                "nome": "50 Salgados Diversos de 20 gramas",
+                "qtd": 1,
+                "preco": 32
+            }
+        ],
+        "status": "preparo"
+    },
+    {
+        "id": "ped_695223731ae0b8.66386555",
+        "data_hora": "2025-12-29 03:45:07",
+        "nome": "Joyce",
+        "telefone": "19988293704",
+        "endereco": "Rua Paulo Francisco Cardoso, 159",
+        "referencia": "Casa",
+        "pag_forma": "Cartão de crédito",
+        "troco": "",
+        "obs": "Oi",
+        "subtotal": "32,00",
+        "itens": [
+            {
+                "nome": "50 Salgados Diversos de 20 gramas",
+                "qtd": 1,
+                "preco": 32
+            }
+        ],
+        "status": "preparo"
+    },
+    {
+        "id": "ped_695221ce6a16b1.96060599",
+        "data_hora": "2025-12-29 03:38:06",
+        "nome": "Joyce",
+        "telefone": "19988293704",
+        "endereco": "Rua Paulo Francisco Cardoso, 159",
+        "referencia": "Casa",
+        "pag_forma": "Cartão de crédito",
+        "troco": "",
+        "obs": "Oi",
+        "subtotal": "32,00",
+        "itens": [
+            {
+                "nome": "50 Salgados Diversos de 20 gramas",
+                "qtd": 1,
+                "preco": 32
+            }
+        ],
+        "status": "preparo"
+    },
+    {
+        "id": "ped_69521f75dc0833.53018525",
+        "data_hora": "2025-12-29 03:28:05",
+        "nome": "CAIO HENRIQUE BARROS DA SILVA",
+        "telefone": "19988293704",
+        "endereco": "Hortolândia2",
+        "referencia": "",
+        "pag_forma": "Dinheiro",
+        "troco": "",
+        "obs": "",
+        "subtotal": "80,90",
+        "itens": [
+            {
+                "nome": "Coxinha de Frango 20g com 20 unidades",
+                "qtd": 1,
+                "preco": 15.9
+            },
+            {
+                "nome": "Coca-Cola 200ml",
+                "qtd": 1,
+                "preco": 5
+            },
+            {
+                "nome": "Cento Misto (100 unidades)",
+                "qtd": 1,
+                "preco": 60
+            }
+        ],
+        "status": "preparo"
+    },
+    {
+        "id": "ped_695212915686c6.95456435",
+        "data_hora": "2025-12-29 02:33:05",
+        "nome": "CAIO HENRIQUE BARROS DA SILVA",
+        "telefone": "19988293704",
+        "endereco": "Hortolândia",
+        "referencia": "casa azul",
+        "pag_forma": "Dinheiro",
+        "troco": "50",
+        "obs": "sem cebola",
+        "subtotal": "15,90",
+        "itens": [
+            {
+                "nome": "Coxinha de Frango 20g com 20 unidades",
+                "qtd": 1,
+                "preco": 15.9
+            }
+        ],
+        "status": "preparo"
+    },
+    {
+        "id": "ped_69520b119772e8.70237481",
+        "data_hora": "2025-12-29 02:01:05",
+        "nome": "CAIO HENRIQUE BARROS DA SILVA",
+        "telefone": "19988293704",
+        "endereco": "Hortolândia",
+        "referencia": "",
+        "pag_forma": "PIX",
+        "troco": "",
+        "obs": "",
+        "subtotal": "15,90",
+        "itens": [
+            {
+                "nome": "Coxinha de Frango 20g com 20 unidades",
+                "qtd": 1,
+                "preco": 15.9
+            }
+        ],
+        "status": "preparo",
+        "ajuste_tipo": "acrescimo",
+        "ajuste_valor": 1,
+        "ajuste_obs": "mais uma coca"
+    }
+]
