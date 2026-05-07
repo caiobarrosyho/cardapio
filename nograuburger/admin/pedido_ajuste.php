@@ -1,17 +1,11 @@
 <?php
 session_start();
+require_once __DIR__ . '/../includes/app.php';
+
 if (empty($_SESSION['logado_cardapio'])) {
     header('Location: login.php');
     exit;
 }
-
-$pedFile = __DIR__ . '/../data/pedidos.json';
-$pedidos = json_decode(@file_get_contents($pedFile), true);
-if (!is_array($pedidos)) {
-    $pedidos = [];
-}
-
-function h($s){ return htmlspecialchars((string)$s, ENT_QUOTES, 'UTF-8'); }
 
 $id = $_GET['id'] ?? '';
 if ($id === '') {
@@ -19,15 +13,12 @@ if ($id === '') {
     exit;
 }
 
-// localizar pedido
-$pedido = null;
-$index  = null;
-foreach ($pedidos as $k => $p) {
-    if (!empty($p['id']) && $p['id'] === $id) {
-        $pedido = $p;
-        $index  = $k;
-        break;
-    }
+try {
+    $pedido = cardapio_buscar_pedido_banco($id);
+} catch (Throwable $e) {
+    error_log('Erro ao carregar pedido para ajuste: ' . $e->getMessage());
+    echo "Não foi possível carregar o pedido.";
+    exit;
 }
 
 if ($pedido === null) {
@@ -42,20 +33,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $obs  = $_POST['ajuste_obs']   ?? '';
 
     $tipo = in_array($tipo, ['acrescimo','desconto'], true) ? $tipo : '';
-    $num  = (float)str_replace(',', '.', (string)$val);
+    $num  = cardapio_dinheiro_para_float($val);
     if ($num < 0) $num = 0;
 
-    $pedido['ajuste_tipo']  = $tipo;
-    $pedido['ajuste_valor'] = $num;
-    $pedido['ajuste_obs']   = $obs;
-
-    // atualiza no array principal
-    if ($index !== null) {
-        $pedidos[$index] = $pedido;
-        @file_put_contents(
-            $pedFile,
-            json_encode($pedidos, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE)
-        );
+    try {
+        cardapio_atualizar_ajuste_pedido_banco($id, $tipo, $num, $obs);
+    } catch (Throwable $e) {
+        error_log('Erro ao salvar ajuste do pedido: ' . $e->getMessage());
     }
 
     // volta para a tela do pedido (ver/imprimir)
@@ -72,10 +56,7 @@ $ajusteTipo  = $pedido['ajuste_tipo']  ?? '';
 $ajusteValor = (float)($pedido['ajuste_valor'] ?? 0);
 $ajusteObs   = $pedido['ajuste_obs']   ?? '';
 
-$subtotalItens = 0.0;
-if (isset($pedido['subtotal'])) {
-    $subtotalItens = (float)str_replace(',', '.', (string)$pedido['subtotal']);
-}
+$subtotalItens = cardapio_dinheiro_para_float($pedido['subtotal'] ?? '0,00');
 
 // total final considerando ajuste
 $totalFinal = $subtotalItens;

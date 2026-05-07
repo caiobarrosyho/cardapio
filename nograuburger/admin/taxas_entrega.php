@@ -3,23 +3,15 @@
 // Protegido por login e com visual no padrão do painel.
 
 session_start();
+require_once __DIR__ . '/../includes/app.php';
 
 if (empty($_SESSION['logado_cardapio'])) {
     header('Location: login.php');
     exit;
 }
 
-$dataFile = __DIR__ . '/../data/produtos.json';
-
-if (!file_exists($dataFile)) {
-    die('Arquivo produtos.json não encontrado.');
-}
-
-$dados = json_decode(file_get_contents($dataFile), true);
-
-if (!is_array($dados)) {
-    die('Erro ao ler produtos.json. Verifique se o JSON está válido.');
-}
+$dataFile = cardapio_data_path('produtos.json');
+$dados = cardapio_carregar_produtos();
 
 if (!isset($dados['loja']) || !is_array($dados['loja'])) {
     $dados['loja'] = [];
@@ -29,9 +21,6 @@ if (!isset($dados['loja']['taxas_entrega']) || !is_array($dados['loja']['taxas_e
     $dados['loja']['taxas_entrega'] = [];
 }
 
-function h($s) {
-    return htmlspecialchars((string)$s, ENT_QUOTES, 'UTF-8');
-}
 
 function normalizar_taxa($taxa) {
     $taxa = trim((string)$taxa);

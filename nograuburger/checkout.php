@@ -1,12 +1,11 @@
 <?php
 session_start();
 require __DIR__ . '/funcoes_carrinho.php';
+require_once __DIR__ . '/includes/app.php';
 
-$dataFile = __DIR__ . '/data/produtos.json';
-$dados = json_decode(file_get_contents($dataFile), true);
+$dados = cardapio_carregar_produtos();
 $loja  = $dados['loja'] ?? [];
 
-function h($s){ return htmlspecialchars((string)$s, ENT_QUOTES, 'UTF-8'); }
 
 $totais = carrinho_totais();
 if ($totais['itens'] === 0) {
