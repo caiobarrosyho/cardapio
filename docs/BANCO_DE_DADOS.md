@@ -115,3 +115,15 @@ php nograuburger/migrar_produtos.php
 O script lê `data/produtos.json`, cria backup automático em `data/backups/` e importa/atualiza as tabelas `categorias` e `produtos` sem duplicar registros em execuções repetidas.
 
 Mais detalhes estão em `docs/MIGRACAO_PRODUTOS.md`.
+
+## Fase 4 — migração de pedidos
+
+A migração de pedidos é feita pelo script:
+
+```bash
+php nograuburger/migrar_pedidos.php
+```
+
+O script lê `data/pedidos.json`, cria backup automático em `data/backups/` e importa/atualiza as tabelas `pedidos` e `pedido_itens` sem duplicar registros em execuções repetidas.
+
+Mais detalhes estão em `docs/MIGRACAO_PEDIDOS.md`.

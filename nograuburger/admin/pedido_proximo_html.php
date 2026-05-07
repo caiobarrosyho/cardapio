@@ -3,10 +3,7 @@
 // Gera CUPOM estreito para impressão térmica (58mm) e chama window.print() automático
 
 header('Content-Type: text/html; charset=utf-8');
-
-$baseDir     = __DIR__ . '/..';
-$pedidosArq  = $baseDir . '/data/pedidos.json';
-$produtosArq = $baseDir . '/data/produtos.json';
+require_once __DIR__ . '/../includes/app.php';
 
 // (opcional) token simples
 $token = $_GET['token'] ?? '';
@@ -15,41 +12,39 @@ if ($token !== '' && $token !== 'TESTE123') {
     exit;
 }
 
-// ----- Carrega dados -----
-$pedidos = [];
-if (file_exists($pedidosArq)) {
-    $json = file_get_contents($pedidosArq);
-    $pedidos = json_decode($json, true) ?: [];
-}
-
-$dadosLoja = [];
-if (file_exists($produtosArq)) {
-    $jsonProd  = file_get_contents($produtosArq);
-    $dadosProd = json_decode($jsonProd, true) ?: [];
-    $dadosLoja = $dadosProd['loja'] ?? [];
-}
+$dadosProd = cardapio_carregar_produtos();
+$dadosLoja = $dadosProd['loja'] ?? [];
 
 // ----- Escolhe pedido -----
 // 1) Se vier id=... na URL, tenta esse
 $pedidoId = $_GET['id'] ?? '';
 $pedido   = null;
 
-if ($pedidoId !== '') {
-    foreach ($pedidos as $p) {
-        if (!empty($p['id']) && $p['id'] === $pedidoId) {
-            $pedido = $p;
-            break;
+try {
+    if ($pedidoId !== '') {
+        $pedido = cardapio_buscar_pedido_banco($pedidoId);
+        if ($pedido) {
+            cardapio_atualizar_status_pedido_banco($pedidoId, $pedido['status'] ?? 'em_impressao', 1);
+            $pedido['impresso'] = 1;
+        }
+    } else {
+        foreach (cardapio_carregar_pedidos_banco() as $p) {
+            if (($p['status'] ?? '') === 'em_impressao') {
+                $pedido = $p;
+                cardapio_atualizar_status_pedido_banco($p['id'], 'em_impressao', 1);
+                $pedido['impresso'] = 1;
+                break;
+            }
+        }
+
+        if (!$pedido) {
+            $pedido = cardapio_proximo_pedido_banco(true);
         }
     }
-} else {
-    // 2) Senão, pega o primeiro com status em_impressao ou novo
-    foreach ($pedidos as $p) {
-        $st = $p['status'] ?? 'novo';
-        if ($st === 'em_impressao' || $st === 'novo') {
-            $pedido = $p;
-            break;
-        }
-    }
+} catch (Throwable $e) {
+    error_log('Erro ao gerar HTML do próximo pedido: ' . $e->getMessage());
+    echo 'Não foi possível consultar pedidos agora.';
+    exit;
 }
 
 if (!$pedido) {
@@ -77,6 +72,8 @@ $pagForma  = $pedido['pag_forma'] ?? '';
 $troco     = $pedido['troco']     ?? '';
 $obs       = $pedido['obs']       ?? '';
 $subtotal  = $pedido['subtotal']  ?? '';
+$taxaEntrega = $pedido['taxa_entrega'] ?? '0,00';
+$totalFinalPedido = $pedido['total_final'] ?? $subtotal;
 $itens     = $pedido['itens']     ?? [];
 
 $dataBr = $dataHora;
@@ -87,8 +84,7 @@ if ($dataHora) {
     }
 }
 
-// total final (se tiver taxa depois você ajusta; por enquanto = subtotal)
-$totalFinal = $subtotal;
+$totalFinal = $totalFinalPedido;
 
 // ----- Monta HTML dos itens -----
 $linhasItens = '';
@@ -270,6 +266,7 @@ if ($logoCupom !== '') {
 
     <div style="font-size:10px; text-align:right;">
       Subtotal: R$ <?php echo htmlspecialchars($subtotal, ENT_QUOTES, 'UTF-8'); ?><br>
+      Taxa: R$ <?php echo htmlspecialchars($taxaEntrega, ENT_QUOTES, 'UTF-8'); ?><br>
       <strong>Total: R$ <?php echo htmlspecialchars($totalFinal, ENT_QUOTES, 'UTF-8'); ?></strong>
     </div>
 

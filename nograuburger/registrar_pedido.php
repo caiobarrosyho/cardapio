@@ -1,6 +1,6 @@
 <?php
 // registrar_pedido.php
-// Recebe os dados via POST (fetch do JS) e grava em data/pedidos.json
+// Recebe os dados via POST (fetch do JS) e grava no banco MariaDB/MySQL
 
 require_once __DIR__ . '/includes/app.php';
 
@@ -36,9 +36,6 @@ if (!is_array($itens)) {
     $itens = [];
 }
 
-// Carrega pedidos existentes
-$lista = cardapio_carregar_pedidos();
-
 // Monta novo pedido
 $pedido = [
     'id'                => uniqid('ped_', true),
@@ -66,19 +63,25 @@ $pedido = [
     'status'            => 'novo'
 ];
 
-// Pedido mais recente primeiro
-array_unshift($lista, $pedido);
-
-// Salva
-cardapio_salvar_pedidos($lista);
-
 header('Content-Type: application/json; charset=utf-8');
 
-echo json_encode([
-    'ok'           => true,
-    'id'           => $pedido['id'],
-    'tipo_pedido'  => $tipoPedido,
-    'bairro'       => $bairro,
-    'taxa_entrega' => $taxa_entrega,
-    'total_final'  => $total_final
-], JSON_UNESCAPED_UNICODE);
+try {
+    $pdo = cardapio_conectar_banco();
+    cardapio_pedido_para_banco($pdo, $pedido);
+
+    echo json_encode([
+        'ok'           => true,
+        'id'           => $pedido['id'],
+        'tipo_pedido'  => $tipoPedido,
+        'bairro'       => $bairro,
+        'taxa_entrega' => $taxa_entrega,
+        'total_final'  => $total_final
+    ], JSON_UNESCAPED_UNICODE);
+} catch (Throwable $e) {
+    error_log('Erro ao registrar pedido No Grau Burger: ' . $e->getMessage());
+    http_response_code(500);
+    echo json_encode([
+        'ok' => false,
+        'erro' => 'Não foi possível registrar o pedido agora. Tente novamente em instantes.'
+    ], JSON_UNESCAPED_UNICODE);
+}

@@ -10,37 +10,22 @@ if (empty($_SESSION['logado_cardapio'])) {
 // dados da loja
 $dados = cardapio_carregar_produtos();
 $loja  = $dados['loja'] ?? [];
+$erroBanco = '';
 
-// pedidos
-$pedidos = cardapio_carregar_pedidos();
-
-// garante status
-foreach ($pedidos as &$p) {
-    if (empty($p['status'])) {
-        $p['status'] = 'novo';
-    }
+try {
+    $pedidos = cardapio_carregar_pedidos_banco();
+} catch (Throwable $e) {
+    error_log('Erro ao carregar pedidos do banco no painel: ' . $e->getMessage());
+    $pedidos = [];
+    $erroBanco = 'Não foi possível carregar pedidos do banco. Verifique a configuração e execute migrar_pedidos.php.';
 }
-unset($p);
-
 
 function dinheiro_para_float($valor) {
-    if ($valor === null || $valor === '') return 0.0;
-
-    $valor = trim((string)$valor);
-
-    if (stripos($valor, 'Aguardando') !== false || stripos($valor, 'consultar') !== false) {
-        return 0.0;
-    }
-
-    $valor = str_replace(['R$', ' '], '', $valor);
-    $valor = str_replace('.', '', $valor);
-    $valor = str_replace(',', '.', $valor);
-
-    return (float)$valor;
+    return cardapio_dinheiro_para_float($valor);
 }
 
 function formatar_dinheiro($valor) {
-    return number_format((float)$valor, 2, ',', '.');
+    return cardapio_formatar_dinheiro($valor);
 }
 
 function logo_relativo($logo) {
@@ -63,38 +48,26 @@ function logo_relativo($logo) {
 $acao = $_GET['acao'] ?? '';
 
 if ($acao && !empty($_GET['id'])) {
-    $id    = $_GET['id'];
-    $mudou = false;
+    $id = $_GET['id'];
 
-    foreach ($pedidos as $k => &$p) {
-        if (($p['id'] ?? '') === $id) {
-            if ($acao === 'status') {
-                $novoStatus = $_GET['status'] ?? '';
-                $permitidos = ['novo', 'preparo', 'finalizado'];
+    try {
+        if ($acao === 'status') {
+            $novoStatus = $_GET['status'] ?? '';
+            $permitidos = ['novo', 'preparo', 'finalizado', 'cancelado', 'em_impressao'];
 
-                if (in_array($novoStatus, $permitidos, true)) {
-                    $p['status'] = $novoStatus;
-                    $mudou = true;
-                }
-            } elseif ($acao === 'excluir') {
-                unset($pedidos[$k]);
-                $mudou = true;
+            if (in_array($novoStatus, $permitidos, true)) {
+                cardapio_atualizar_status_pedido_banco($id, $novoStatus);
             }
-
-            break;
+        } elseif ($acao === 'excluir') {
+            cardapio_excluir_pedido_banco($id);
         }
+    } catch (Throwable $e) {
+        error_log('Erro ao atualizar pedido no painel: ' . $e->getMessage());
     }
-    unset($p);
 
-    if ($mudou) {
-        $pedidos = array_values($pedidos);
-
-        cardapio_salvar_pedidos($pedidos);
-
-        $extra = (!empty($_GET['todos']) && $_GET['todos'] === '1') ? '?todos=1' : '';
-        header('Location: pedidos.php' . $extra);
-        exit;
-    }
+    $extra = (!empty($_GET['todos']) && $_GET['todos'] === '1') ? '?todos=1' : '';
+    header('Location: pedidos.php' . $extra);
+    exit;
 }
 
 // ordenar pedidos do mais novo para o mais antigo
@@ -127,23 +100,16 @@ $pedidoDetalhe = null;
 $pedidoId = $_GET['id'] ?? '';
 
 if ($pedidoId !== '') {
-    $mudouStatus = false;
+    try {
+        $pedidoDetalhe = cardapio_buscar_pedido_banco($pedidoId);
 
-    foreach ($pedidos as $k => &$p) {
-        if (!empty($p['id']) && $p['id'] === $pedidoId) {
-            if (($p['status'] ?? 'novo') === 'novo') {
-                $p['status'] = 'preparo';
-                $mudouStatus = true;
-            }
-
-            $pedidoDetalhe = $p;
-            break;
+        if ($pedidoDetalhe && ($pedidoDetalhe['status'] ?? 'novo') === 'novo') {
+            cardapio_atualizar_status_pedido_banco($pedidoId, 'preparo');
+            $pedidoDetalhe['status'] = 'preparo';
         }
-    }
-    unset($p);
-
-    if ($mudouStatus) {
-        cardapio_salvar_pedidos($pedidos);
+    } catch (Throwable $e) {
+        error_log('Erro ao abrir detalhe do pedido no painel: ' . $e->getMessage());
+        $erroBanco = 'Não foi possível abrir o pedido no banco.';
     }
 }
 
@@ -429,6 +395,13 @@ $endCep    = $loja['cep']         ?? '';
     <h1>Pedidos – Painel</h1>
     <a href="index.php" class="btn btn-outline">← Voltar ao painel</a>
   </div>
+
+  <?php if ($erroBanco): ?>
+    <div class="admin-box no-print" style="border-color:#fecaca;background:#fff7f7;">
+      <strong>Banco de dados indisponível.</strong>
+      <p style="font-size:13px;color:#7f1d1d;margin:6px 0 0;"><?php echo h($erroBanco); ?></p>
+    </div>
+  <?php endif; ?>
 
   <?php if ($pedidoDetalhe): ?>
 
@@ -785,6 +758,9 @@ $endCep    = $loja['cep']         ?? '';
               } elseif ($status === 'finalizado') {
                   $statusLabel = 'Finalizado';
                   $badgeClass = 'badge-status badge-status-finalizado';
+              } elseif ($status === 'em_impressao') {
+                  $statusLabel = 'Em impressão';
+                  $badgeClass = 'badge-status badge-status-preparo';
               }
 
               $rowClass = ($status === 'novo') ? 'pedido-row-novo' : '';

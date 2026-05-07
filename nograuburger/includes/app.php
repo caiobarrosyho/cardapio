@@ -269,3 +269,285 @@ function cardapio_preco_decimal($valor) {
     $decimal = round((float)$valor, 2);
     return $decimal >= 0 ? $decimal : null;
 }
+
+function cardapio_dinheiro_para_float($valor) {
+    if ($valor === null || $valor === '') {
+        return 0.0;
+    }
+
+    if (is_int($valor) || is_float($valor)) {
+        return (float)$valor;
+    }
+
+    $valor = trim((string)$valor);
+    if ($valor === '' || stripos($valor, 'Aguardando') !== false || stripos($valor, 'consultar') !== false) {
+        return 0.0;
+    }
+
+    $valor = str_replace(['R$', ' '], '', $valor);
+    $valor = str_replace('.', '', $valor);
+    $valor = str_replace(',', '.', $valor);
+
+    return is_numeric($valor) ? (float)$valor : 0.0;
+}
+
+function cardapio_formatar_dinheiro($valor) {
+    return number_format((float)$valor, 2, ',', '.');
+}
+
+function cardapio_normalizar_status_pedido($status) {
+    $status = limpar($status ?: 'novo');
+    $permitidos = ['novo', 'preparo', 'finalizado', 'cancelado', 'em_impressao'];
+
+    return in_array($status, $permitidos, true) ? $status : 'novo';
+}
+
+function cardapio_pedido_para_banco(PDO $pdo, array $pedido) {
+    $dadosLoja = cardapio_carregar_produtos();
+    $lojaId = cardapio_obter_loja_id($pdo, $dadosLoja['loja'] ?? []);
+
+    $codigo = limpar($pedido['id'] ?? '');
+    if ($codigo === '') {
+        $codigo = uniqid('ped_', true);
+    }
+
+    $tipoPedido = limpar($pedido['tipo_pedido'] ?? 'Entrega');
+    if ($tipoPedido === 'Retirada') {
+        $tipoPedido = 'Retirada no local';
+    }
+    if (!in_array($tipoPedido, ['Entrega', 'Retirada no local'], true)) {
+        $tipoPedido = 'Entrega';
+    }
+
+    $subtotal = cardapio_dinheiro_para_float($pedido['subtotal'] ?? 0);
+    $taxa = cardapio_dinheiro_para_float($pedido['taxa_entrega'] ?? 0);
+    $totalOriginal = (string)($pedido['total_final'] ?? '');
+    $entregaConsultar = (int)($pedido['entrega_consultar'] ?? 0);
+    $total = ($entregaConsultar === 1 || stripos($totalOriginal, 'Aguardando') !== false)
+        ? 0.0
+        : cardapio_dinheiro_para_float($totalOriginal !== '' ? $totalOriginal : ($subtotal + $taxa));
+
+    $stmt = $pdo->prepare('SELECT id FROM pedidos WHERE codigo_publico = :codigo LIMIT 1');
+    $stmt->execute([':codigo' => $codigo]);
+    $pedidoId = $stmt->fetchColumn();
+
+    $params = [
+        ':loja_id' => $lojaId,
+        ':codigo_publico' => $codigo,
+        ':nome_cliente' => limpar($pedido['nome'] ?? ''),
+        ':telefone' => limpar($pedido['telefone'] ?? ''),
+        ':tipo_pedido' => $tipoPedido,
+        ':bairro' => limpar($pedido['bairro'] ?? ''),
+        ':endereco' => limpar($pedido['endereco'] ?? ''),
+        ':referencia' => limpar($pedido['referencia'] ?? ''),
+        ':pag_forma' => limpar($pedido['pag_forma'] ?? ''),
+        ':troco' => limpar($pedido['troco'] ?? ''),
+        ':obs' => limpar($pedido['obs'] ?? ''),
+        ':subtotal' => $subtotal,
+        ':taxa_entrega' => $taxa,
+        ':ajuste_tipo' => in_array(($pedido['ajuste_tipo'] ?? ''), ['acrescimo', 'desconto'], true) ? $pedido['ajuste_tipo'] : null,
+        ':ajuste_valor' => cardapio_dinheiro_para_float($pedido['ajuste_valor'] ?? 0),
+        ':ajuste_obs' => limpar($pedido['ajuste_obs'] ?? ''),
+        ':total_final' => $total,
+        ':entrega_consultar' => $entregaConsultar,
+        ':status' => cardapio_normalizar_status_pedido($pedido['status'] ?? 'novo'),
+        ':impresso' => isset($pedido['impresso']) ? (int)$pedido['impresso'] : ((($pedido['status'] ?? '') === 'em_impressao') ? 1 : 0),
+        ':recebido_em' => limpar($pedido['data_hora'] ?? '') ?: date('Y-m-d H:i:s'),
+    ];
+
+    if ($pedidoId) {
+        $params[':id'] = (int)$pedidoId;
+        $paramsUpdate = $params;
+        unset($paramsUpdate[':codigo_publico']);
+        $stmt = $pdo->prepare(
+            'UPDATE pedidos SET loja_id = :loja_id, nome_cliente = :nome_cliente, telefone = :telefone,
+             tipo_pedido = :tipo_pedido, bairro = :bairro, endereco = :endereco, referencia = :referencia,
+             pag_forma = :pag_forma, troco = :troco, obs = :obs, subtotal = :subtotal,
+             taxa_entrega = :taxa_entrega, ajuste_tipo = :ajuste_tipo, ajuste_valor = :ajuste_valor,
+             ajuste_obs = :ajuste_obs, total_final = :total_final, entrega_consultar = :entrega_consultar,
+             status = :status, impresso = :impresso, recebido_em = :recebido_em
+             WHERE id = :id'
+        );
+        $stmt->execute($paramsUpdate);
+        $pedidoId = (int)$pedidoId;
+    } else {
+        $stmt = $pdo->prepare(
+            'INSERT INTO pedidos (loja_id, codigo_publico, nome_cliente, telefone, tipo_pedido, bairro, endereco,
+             referencia, pag_forma, troco, obs, subtotal, taxa_entrega, ajuste_tipo, ajuste_valor, ajuste_obs,
+             total_final, entrega_consultar, status, impresso, recebido_em)
+             VALUES (:loja_id, :codigo_publico, :nome_cliente, :telefone, :tipo_pedido, :bairro, :endereco,
+             :referencia, :pag_forma, :troco, :obs, :subtotal, :taxa_entrega, :ajuste_tipo, :ajuste_valor,
+             :ajuste_obs, :total_final, :entrega_consultar, :status, :impresso, :recebido_em)'
+        );
+        $stmt->execute($params);
+        $pedidoId = (int)$pdo->lastInsertId();
+    }
+
+    $pdo->prepare('DELETE FROM pedido_itens WHERE pedido_id = :pedido_id')->execute([':pedido_id' => $pedidoId]);
+
+    $stmtItem = $pdo->prepare(
+        'INSERT INTO pedido_itens (pedido_id, produto_id, nome_produto, quantidade, preco_unitario, subtotal, observacao)
+         VALUES (:pedido_id, :produto_id, :nome_produto, :quantidade, :preco_unitario, :subtotal, :observacao)'
+    );
+
+    foreach (($pedido['itens'] ?? []) as $item) {
+        $qtd = max(1, (int)($item['qtd'] ?? $item['quantidade'] ?? 1));
+        $preco = cardapio_dinheiro_para_float($item['preco'] ?? $item['preco_unitario'] ?? 0);
+        $produtoId = isset($item['produto_id']) && (int)$item['produto_id'] > 0 ? (int)$item['produto_id'] : null;
+
+        $stmtItem->execute([
+            ':pedido_id' => $pedidoId,
+            ':produto_id' => $produtoId,
+            ':nome_produto' => limpar($item['nome'] ?? $item['nome_produto'] ?? ''),
+            ':quantidade' => $qtd,
+            ':preco_unitario' => $preco,
+            ':subtotal' => $preco * $qtd,
+            ':observacao' => limpar($item['observacao'] ?? ''),
+        ]);
+    }
+
+    return [$pedidoId, $codigo];
+}
+
+function cardapio_pedido_array(array $row, array $itens = []) {
+    $dataHora = $row['recebido_em'] ?? $row['criado_em'] ?? '';
+
+    return [
+        'id' => $row['codigo_publico'] ?: (string)$row['id'],
+        'db_id' => (int)$row['id'],
+        'data_hora' => $dataHora,
+        'nome' => $row['nome_cliente'] ?? '',
+        'telefone' => $row['telefone'] ?? '',
+        'tipo_pedido' => $row['tipo_pedido'] ?? 'Entrega',
+        'bairro' => $row['bairro'] ?? '',
+        'endereco' => $row['endereco'] ?? '',
+        'referencia' => $row['referencia'] ?? '',
+        'pag_forma' => $row['pag_forma'] ?? '',
+        'troco' => $row['troco'] ?? '',
+        'obs' => $row['obs'] ?? '',
+        'subtotal' => cardapio_formatar_dinheiro($row['subtotal'] ?? 0),
+        'taxa_entrega' => cardapio_formatar_dinheiro($row['taxa_entrega'] ?? 0),
+        'total_final' => ((int)($row['entrega_consultar'] ?? 0) === 1) ? 'Aguardando confirmação' : cardapio_formatar_dinheiro($row['total_final'] ?? 0),
+        'entrega_consultar' => (string)($row['entrega_consultar'] ?? '0'),
+        'ajuste_tipo' => $row['ajuste_tipo'] ?? '',
+        'ajuste_valor' => (float)($row['ajuste_valor'] ?? 0),
+        'ajuste_obs' => $row['ajuste_obs'] ?? '',
+        'status' => cardapio_normalizar_status_pedido($row['status'] ?? 'novo'),
+        'impresso' => (int)($row['impresso'] ?? 0),
+        'itens' => $itens,
+    ];
+}
+
+function cardapio_itens_pedido_banco(PDO $pdo, $pedidoId) {
+    $stmt = $pdo->prepare('SELECT produto_id, nome_produto, quantidade, preco_unitario, subtotal, observacao FROM pedido_itens WHERE pedido_id = :pedido_id ORDER BY id ASC');
+    $stmt->execute([':pedido_id' => $pedidoId]);
+
+    $itens = [];
+    foreach ($stmt->fetchAll() as $item) {
+        $itens[] = [
+            'produto_id' => $item['produto_id'] ? (int)$item['produto_id'] : null,
+            'nome' => $item['nome_produto'],
+            'qtd' => (int)$item['quantidade'],
+            'preco' => (float)$item['preco_unitario'],
+            'subtotal' => (float)$item['subtotal'],
+            'observacao' => $item['observacao'] ?? '',
+        ];
+    }
+
+    return $itens;
+}
+
+function cardapio_carregar_pedidos_banco() {
+    $pdo = cardapio_conectar_banco();
+    $stmt = $pdo->query('SELECT * FROM pedidos ORDER BY COALESCE(recebido_em, criado_em) DESC, id DESC');
+    $pedidos = [];
+
+    foreach ($stmt->fetchAll() as $row) {
+        $pedidos[] = cardapio_pedido_array($row, cardapio_itens_pedido_banco($pdo, (int)$row['id']));
+    }
+
+    return $pedidos;
+}
+
+function cardapio_buscar_pedido_banco($id) {
+    $pdo = cardapio_conectar_banco();
+    $stmt = $pdo->prepare('SELECT * FROM pedidos WHERE codigo_publico = :codigo OR id = :id LIMIT 1');
+    $stmt->execute([
+        ':codigo' => (string)$id,
+        ':id' => ctype_digit((string)$id) ? (int)$id : 0,
+    ]);
+    $row = $stmt->fetch();
+
+    return $row ? cardapio_pedido_array($row, cardapio_itens_pedido_banco($pdo, (int)$row['id'])) : null;
+}
+
+function cardapio_atualizar_status_pedido_banco($id, $status, $impresso = null) {
+    $pdo = cardapio_conectar_banco();
+    $status = cardapio_normalizar_status_pedido($status);
+    $sql = 'UPDATE pedidos SET status = :status';
+    $params = [':status' => $status, ':codigo' => (string)$id, ':id' => ctype_digit((string)$id) ? (int)$id : 0];
+
+    if ($impresso !== null) {
+        $sql .= ', impresso = :impresso';
+        $params[':impresso'] = (int)$impresso;
+    }
+
+    $sql .= ' WHERE codigo_publico = :codigo OR id = :id';
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute($params);
+}
+
+function cardapio_excluir_pedido_banco($id) {
+    $pdo = cardapio_conectar_banco();
+    $stmt = $pdo->prepare('DELETE FROM pedidos WHERE codigo_publico = :codigo OR id = :id');
+    $stmt->execute([
+        ':codigo' => (string)$id,
+        ':id' => ctype_digit((string)$id) ? (int)$id : 0,
+    ]);
+}
+
+function cardapio_atualizar_ajuste_pedido_banco($id, $tipo, $valor, $obs) {
+    $pdo = cardapio_conectar_banco();
+    $tipo = in_array($tipo, ['acrescimo', 'desconto'], true) ? $tipo : null;
+    $valor = max(0, cardapio_dinheiro_para_float($valor));
+
+    $stmt = $pdo->prepare(
+        'UPDATE pedidos SET ajuste_tipo = :tipo, ajuste_valor = :valor, ajuste_obs = :obs WHERE codigo_publico = :codigo OR id = :id'
+    );
+    $stmt->execute([
+        ':tipo' => $tipo,
+        ':valor' => $valor,
+        ':obs' => limpar($obs),
+        ':codigo' => (string)$id,
+        ':id' => ctype_digit((string)$id) ? (int)$id : 0,
+    ]);
+}
+
+function cardapio_proximo_pedido_banco($marcarEmImpressao = true) {
+    $pdo = cardapio_conectar_banco();
+    $pdo->beginTransaction();
+
+    try {
+        $stmt = $pdo->query("SELECT * FROM pedidos WHERE status = 'novo' OR status = '' ORDER BY COALESCE(recebido_em, criado_em) ASC, id ASC LIMIT 1 FOR UPDATE");
+        $row = $stmt->fetch();
+
+        if (!$row) {
+            $pdo->commit();
+            return null;
+        }
+
+        if ($marcarEmImpressao) {
+            $upd = $pdo->prepare("UPDATE pedidos SET status = 'em_impressao', impresso = 1 WHERE id = :id");
+            $upd->execute([':id' => (int)$row['id']]);
+            $row['status'] = 'em_impressao';
+            $row['impresso'] = 1;
+        }
+
+        $pedido = cardapio_pedido_array($row, cardapio_itens_pedido_banco($pdo, (int)$row['id']));
+        $pdo->commit();
+        return $pedido;
+    } catch (Throwable $e) {
+        $pdo->rollBack();
+        throw $e;
+    }
+}
